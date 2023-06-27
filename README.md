@@ -7,4 +7,4 @@ Within this repository you will find my school work for the last few years.
 From core classes at Bellevue to some electives from Foothill CC
 
 
-View [repositories](https://petster.github.io/Bellevue/)
+View [repositories](https://petster.github.io/jpalmeri-bellevue/)
