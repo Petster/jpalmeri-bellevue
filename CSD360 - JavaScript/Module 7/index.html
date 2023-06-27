@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        5/31/22
+        Module 7
+        I don't really watch sports or anything so I took the assignment a step further and decided to try using an API and I found the sportsDB had a free api so I used that to get a list of sports team, their logos and other information.
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Palmeri - Module 7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .t-bg {
+            background-color: #090909cf;
+            box-shadow: 5px 5px 30px #0006;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full min-h-screen bg-blue-100" id="top">
+        <div class="flex justify-center gap-4 sticky top-0 z-50 t-bg p-2 w-full">
+            <select id="order" name="order" class="bg-gray-500 text-white p-2 rounded-md text-center">
+                <option class="p-2" value="default">Default</option>
+                <option class="p-2" value="reverse">Reverse</option>
+            </select>
+            <select id="league" name="league" class="bg-gray-500 text-white p-2 rounded-md text-center">
+                <option class="p-2" value="NBA">NBA</option>
+                <option class="p-2" value="NFL">NFL</option>
+                <option class="p-2" value="MLB">MLB</option>
+            </select>
+        </div>
+        <div class="flex flex-col md:w-3/4 mx-auto">
+            <div id="teamsList" class="flex flex-wrap content-center justify-center gap-4 pt-4 pb-4">
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        //https://www.thesportsdb.com/
+        //divs that are used and created
+        let teamsList;
+        let order = document.getElementById('order');
+        let listDiv = document.getElementById('teamsList');
+        let loader = `<img src="./loader.gif" alt="loading" />`;
+        const cardClass = 'rounded-md border-2 border-black active:border-yellow-500 bg-purple-300 hover:bg-purple-500 font-bold hover:text-white p-2 h-64 w-64 flex content-center justify-center items-center flex-col';
+
+        //displays the array in its original way
+        function defaultDisplay(league) {
+            //clears listDiv
+            clearDisplay();
+            //sets loader while fetching
+            listDiv.innerHTML = loader;
+            fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${league}`).then(response => response.json()).then(data => teamsList = data['teams']).then(function(data) {
+                //console.log(teamsList);
+                //remove loader
+                listDiv.innerHTML = "";
+                //map each JSON response as a card
+                teamsList.forEach(da => {
+                    listDiv.innerHTML += `
+                    <a href='https://${da.strWebsite}' target='_blank'>
+                        <div class='${cardClass}'>
+                            <img class="h-24 w-24 m-2" src='${da.strTeamBadge}' alt="${da.strTeam} logo" />
+                            <h1 class="text-center">${da.strTeam} (${da.strTeamShort})</h1>
+                            <p>${da.strCountry}</p>
+                        </div>
+                    </a>
+                    `;
+                })
+            });
+        }      
+        
+        //similar to defaultDisplay, but now uses .reverse()
+        function reverseDisplay(league) {
+            clearDisplay();
+            listDiv.innerHTML = loader;
+            fetch(`https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${league}`).then(response => response.json()).then(data => teamsList = data['teams']).then(function(data) {
+                //console.log(teamsList);
+                listDiv.innerHTML = "";
+                teamsList.slice().reverse().forEach(da => {
+                    listDiv.innerHTML += `
+                    <a href='https://${da.strWebsite}' target='_blank'>
+                        <div class='${cardClass}'>
+                            <img class="h-24 w-24 m-2" src='${da.strTeamBadge}' alt="${da.strTeam} logo" />
+                            <h1>${da.strTeam} (${da.strTeamShort})</h1>
+                            <p>${da.strCountry}</p>
+                        </div>
+                    </a>
+                    `;
+                })
+            });
+        } 
+
+        //quick clear display function
+        function clearDisplay() {
+            listDiv.innerHTML = "";
+        }
+
+        //sets the currentLeague default as NBA and creates the defaultDisplay on load
+        let currentLeague = 'NBA';
+        defaultDisplay(currentLeague);
+
+        //select option on change set default or reverse
+        order.addEventListener('change', function() {
+            //console.log(order.value);
+            switch(order.value) {
+                case 'default':
+                    defaultDisplay(currentLeague);
+                    break;
+                case 'reverse':
+                    reverseDisplay(currentLeague);
+                    break;
+            }
+        });
+
+        //select option on change to select a different league, create it's default display and reset the order option to default
+        document.getElementById('league').addEventListener('change', function() {
+            switch(league.value) {
+                case 'NBA':
+                    currentLeague = 'NBA';
+                    defaultDisplay(currentLeague);
+                    order.value = 'default';
+                    break;
+                case 'NFL':
+                    currentLeague = 'NFL';
+                    defaultDisplay(currentLeague);
+                    order.value = 'default';
+                    break;
+                case 'MLB':
+                    currentLeague = 'MLB';
+                    defaultDisplay(currentLeague);
+                    order.value = 'default';
+                    break;
+            }
+        })
+
+        //back to home
+        document.write(`<a style="font-size: larger; position: fixed; bottom: 50px; right: 5px; padding: 10px; background: green; color: white; border-radius:25px" href="#top">Back to Top</a>`)
+        document.write(`<a style="font-size: larger; position: fixed; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

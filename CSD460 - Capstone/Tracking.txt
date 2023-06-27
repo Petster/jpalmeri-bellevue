@@ -1,0 +1,24 @@
+Keeping track of things people do.
+
+--Module 2--
+Jason:
+Purpose
+3 User Personas
+work Estimates
+
+Zach:
+9 User Stories
+
+John/Scott:
+Terminology
+
+Mishaela:
+Proof Reading
+
+--Module 3--
+Jason:
+Layout
+
+Mishaela:
+Color Scheme
+Fonts

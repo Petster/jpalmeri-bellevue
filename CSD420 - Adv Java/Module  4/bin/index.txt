@@ -1,0 +1,3 @@
+https://i.gyazo.com/cab37b0fcce90807b05a17df15d47812.png
+
+I believe that foreach is faster because the whole purpose of the foreach loop is to just iterate through the array and display, while the for loop is meant for actually utilizing the data it is iterating through, I went into depth on this in my discussion post where GeeksforGeek had a list of disadvantages using foreach, which mentioned that foreach is mainly for iterating through an array to display, instead of calculating/manipulating data.

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        6/5/22
+        Module 11
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Palmeri Module 11</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="col" class="bg-blue-100">
+    <div class="p-4 w-full min-h-screen flex flex-col md:w-3/4 mx-auto" id="top">
+        <div class="mx-auto flex flex-row">
+            <p class="text-center p-4">Random Image</p>    
+            <div class="flex justify-center items-center content-center">
+                <label class="switch">
+                    <input type="checkbox" id="sliderE">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <p class="text-center p-4">Image Selector</p>
+        </div>
+        <div class="flex flex-grow content-center items-center justify-center">
+            <div id="randomImage" class="text-center flex flex-col p-12 flex-wrap content-center items-center justify-center gap-4">
+                <div id="imageRoot">
+
+                </div>
+                <button id="newImage" type="button" class="bg-gray-500 hover:bg-gray-300 p-4 rounded-md text-white hover:text-black border-2 border-gray-700">New Image</button>
+            </div>
+            <div id="selectImage" class="hidden text-center flex p-12 flex-wrap content-center items-center justify-center gap-4">
+                <div class="flex flex-row gap-4">
+                    <div>
+                        <img id="mainImage" src="./img/0001_3.JPG" alt="image from the folders" />
+                    </div>
+                    <div id="imagegrid" class="grid grid-cols-3 gap-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        let i = 1;
+        let imageList = [];
+
+        //populate the imageList
+        while(i <= 14) {
+            let image, thumb;
+            if(i <= 9) {
+                image = "./img/000" + i + "_3.JPG";
+                thumb = "./img/000" + i + "_6.JPG";
+            } else {
+                image = "./img/00" + i + "_3.JPG";
+                thumb = "./img/00" + i + "_6.JPG";
+            }
+            imageList.push({
+                "image": image,
+                "thumb": thumb
+            });
+            i++;
+        }
+
+        //slider functionality
+        $('#sliderE').click(function() {
+            if(this.checked) {
+                this.setAttribute('checked', "");
+                $('#selectImage').removeClass('hidden');
+                $('#randomImage').addClass('hidden');
+            } else {
+                this.removeAttribute('checked');
+                $('#selectImage').addClass('hidden');
+                $('#randomImage').removeClass('hidden');
+            }
+        });
+
+        //create a random image
+        function createRandomImage() {
+            $('#imageRoot').empty();
+            $('#imageRoot').append(`
+            <div>
+                <img src=${imageList[Math.floor(Math.random() * imageList.length)]['image']} alt="an image from the files" />    
+            </div>
+        `);
+        }
+
+        //reset all borders on imagegrid
+        function resetBorders() {
+            $('#imagegrid').each(function() {
+                let thumbs = $(this).find('img');
+                thumbs.each(function() {
+                    let photoNum = $(this).attr("id");
+                    let div = $('#' + photoNum + "border");
+                    div.removeClass('outline-2 outline-black outline');
+                })
+            })
+        }
+
+        //initial random image
+        createRandomImage();
+
+        //create a new image on click
+        $('#newImage').click(createRandomImage);
+
+        //create the thumbnails for the image selector
+        imageList.map((da, index) => {
+            $('#imagegrid').append(`
+                <div id="${da.thumb.substring(6,10)}border" class="rounded-md">
+                    <img class="thumbnail" id=${da.thumb.substring(6,10)} src=${da.thumb} alt="thumbnail from the folders" />
+                </div>
+                `);
+        });
+
+        //add border to initial creation
+        $('#0001border').addClass('outline-2 outline-black outline');
+
+        //for each thumbnail in the image grid add a click event that changes mainImage
+        $('#imagegrid').each(function() {
+            let thumbs = $(this).find('img');
+            thumbs.each(function() {
+                $(this).click(function() {
+                    resetBorders();
+                    let photoNum = $(this).attr("id");
+                    let div = $('#' + photoNum + "border");
+                    div.addClass('outline-2 outline-black outline')
+                    let photoURL = "./img/" + photoNum + "_3.JPG";;
+                    $('#mainImage').attr('src', photoURL)
+                });
+            });
+        });
+
+        document.write(`<a style="font-size: larger; position: fixed; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

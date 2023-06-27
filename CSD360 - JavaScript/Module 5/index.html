@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        5/28/22
+        Module 5
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5 - Jason Palmeri</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;  
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-grow {
+            flex-grow: 1;
+        }
+        button {
+            padding: 7px;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size:larger;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: rgb(119, 157, 191)!important;
+            color: black;
+        }
+        tr td {
+            background: gray;
+        }
+        span {
+            float: right;
+        }
+        table {
+            font-size: larger;
+            font-weight: bold;
+            border: black 1px solid;
+        }
+        table td {
+            border: 1px black solid;
+        }
+        tr td span {
+            width: 200px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-grow">
+        <div class="flex flex-grow" style="justify-content: center; align-items: center; align-content: center;">
+            <form name='form1'>
+                <!-- I changed it to spans because I don't see the point of them being inputs as you are not inputting numbers to be calculated because its all random -->
+                <table class="flex" style="justify-content: center">
+                    <tr>
+                        <td> Dice 1 </td>
+                        <td> <span id="dice1"></span> </td>
+                    </tr>
+                    <tr>
+                        <td> Dice 2 </td>
+                        <td> <span id='dice2'></span> </td>
+                    </tr>
+                    <tr>
+                        <td> Total </td>
+                        <td> <span id='total'></span> </td>
+                    </tr>
+                </table>
+                <div class="flex flex-grow" style="justify-content: center; padding: 10px;">
+                    <button style="background: green;" type='button' name='button1' onclick='rollDice()' value='Roll Dice'>Roll Dice</button>
+                    <button style="background: red;" type='button' name='button5' value='Reset' onclick='reset()'>Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        let dice1 = document.getElementById('dice1');
+        let dice2 = document.getElementById('dice2');
+        let total1 = document.getElementById('total');
+
+        function rollDice(){
+            dice1.innerHTML = Math.floor((Math.random() * 6) + 1);
+            dice2.innerHTML = Math.floor((Math.random() * 6) + 1);
+            let total = parseInt(dice1.innerHTML) +
+            parseInt(dice2.innerHTML);
+            switch(total){
+                case 2:
+                    total1.innerHTML = "Snake Eyes";
+                    break;
+                case 12:
+                    total1.innerHTML = "Box Cars";
+                    break;
+                case 7:
+                    total1.innerHTML = "You Win";
+                    break;
+                case 11:
+                    total1.innerHTML = "You Win";  
+                    break;
+                default:
+                    total1.innerHTML = total;
+                    break;
+            }
+        }
+        document.write(`<a style="font-size: larger; position: absolute; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+       </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body {
+    background-color: lightcyan;
+    padding: 0;
+    margin: 0;
+}
+html {
+    padding: 0;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: purple;
+}
+#container {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.w-45 {
+    width: 45%;
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.w-100 {
+    width: 100%;
+}
+.mt-60 {
+    margin-top: 60%;
+}
+.float-end {
+    float: right;
+}
+a {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+a:hover {
+    color: purple;
+}

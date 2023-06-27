@@ -1,0 +1,45 @@
+.text-center {
+    text-align: center;
+}
+#container {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+#image-gallery { 
+    margin-top: 10%;
+}
+img {
+    width: 400px;
+    height: 350px;
+}
+figure {
+    text-align: center;
+}
+h1, h3, figure, figcaption {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-weight: 400;
+}
+figcaption {
+    font-style: italic;
+    font-size: 0.75em;
+}
+body {
+    background: rgba(247, 112, 24, 0.2);
+}
+h1, h3, figcaption {
+    color: rgba(185, 63, 8, 1);
+}
+.flex div {
+    border: solid 1px;
+    border-color: rgba(185, 63, 8, 1);
+    border-radius: 15px;
+    padding: 5px;
+}

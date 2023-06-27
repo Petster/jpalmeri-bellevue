@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        5/26/22
+        Module 3
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3 - Jason Palmeri</title>
+    <script>
+        let one = "Excited";
+        let two = "Sunday Ticket";
+        let three = "Discord, Microsoft, Square Enix, Corsair, and Logitech!";
+        let four = "pins to shirts, and even a keyboard!";
+    </script>
+    <style>
+        button {
+            padding: 7px;
+            width: 150px;
+            border-radius: 20px;
+            background: green;
+            font-weight: bold;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: gray;
+            cursor: default;
+        }
+        button:disabled:hover {
+            background: #363636;
+        }
+        button:hover {
+            background: #49b47e;
+        }
+        #reset {
+            background: red;
+        }
+        #reset:hover {
+            background: #e76363;
+        }
+        h1 {
+            margin:0 auto;
+            text-align:center;
+            border-bottom: 2px solid;
+            border-color:black;
+            width:35%;
+        }
+    </style>
+</head>
+<body style="background: aliceblue;">
+    <div style="padding:20px">
+        <h1>Going to Pax</h1>
+    </div>
+    <div style="display: flex; flex-flow:column;padding:20px;text-align:center;">
+        <p>The first time I went to Pax East I was very <span id="oneD">______________</span> and I couldn't wait to see what it was like at a convention</p>
+        <p>I decided to get the <span id="twoD">______________</span>, thinking it would be less crowded and I would have an easier time looking around. To my surprise the convention center was still very much packed!</p>
+        <p>Going into the convention center I saw a bunch of booths from all my favorite companies including <span id="threeD">______________</span></p>
+        <p>Each booth was giving away free merchandise as it was the last day so I was able to get a lot of cool stuff from <span id="fourD">______________</span> it was all very exciting and I've been going to Pax for the last 4 years with my friends :)</p>
+
+        <div style="display:flex; flex-flow:row; padding:20px;justify-content: space-between;">
+            <button class="toggle" onclick="displayData(one, oneD)" >One</button>
+            <button class="toggle" onclick="displayData(two, twoD)">Two</button>
+            <button class="toggle" onclick="displayData(three, threeD)">Three</button>
+            <button class="toggle" onclick="displayData(four, fourD)">Four</button>
+        </div>
+
+        <div style="display:flex; flex-flow:row; padding:20px;justify-content: center;">
+            <button id="reset" onclick="resetData()">Reset</button>
+        </div>
+    </div>
+    <script>
+        //on button click disable
+        let buttons = document.querySelectorAll('.toggle');
+
+        for(const button of buttons) {
+            button.addEventListener('click', function() {
+                this.disabled = true;
+            })
+        }
+
+        function displayData(text, id) {
+            //set text and underline them
+            id.innerHTML = text;
+            id.style.textDecoration = 'underline';
+        }
+
+        function resetData() {
+            //set innerHTML back to underscores
+            const ids = [oneD, twoD, threeD, fourD];
+
+            ids.forEach(element => {
+                element.innerHTML = '______________';
+                element.style.textDecoration = 'none';
+            });
+
+            //reenable buttons
+            let resetButtons = document.querySelectorAll('.toggle');
+
+            for(const rB of resetButtons) {
+                rB.disabled = false;
+            }
+        }
+
+        document.write(`<a style="font-size: larger; position: absolute; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

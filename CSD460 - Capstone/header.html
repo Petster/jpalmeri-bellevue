@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .color-1 {
+            background-color: #574922;
+        }
+        .color-2 {
+            background-color: #f0dba1;
+        }
+        .color-3 {
+            background-color: #d6b354;
+        }
+        .color-3-hover:hover {
+            background-color: #d6b354;
+        }
+        .color-4 {
+            background-color: #5c470f;
+        }
+        .color-5 {
+            background-color: #a38940;
+        }
+        .color-5-hover:hover {
+            background-color: #a38940;
+        }
+        .header-border {
+            border-bottom: 5px solid #574922;
+        }
+        .arial {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-red-500">
+    <header>
+        <div id="desktop" class="hidden h-14 color-2 py-1 px-2 md:flex flex-row justify-between items-center content-center header-border arial">
+            <div class="flex flex-row">
+                <img src="LogoBlackSquareTransparent.png" alt="Provisio Logo" class="w-48" />
+            </div>
+            <div class="flex flex-row gap-4">
+                <p>About Us</p>
+                <p>Reserve</p>
+                <p>Reservation Lookup</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="flex flex-row gap-2">
+                <p>Join</p>
+                <div class="border-r-2 border-black"></div>
+                <div class="flex flex-row gap-2">
+                    <p>Sign In</p>
+                    <div id="desktopToggle">
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="desktopDropdown" class="hidden origin-top-right absolute right-2 top-14 mt-2 w-56 rounded-md color-3 p-2 flex flex-col">
+                <div class="flex flex-row flex-grow gap-2 content-center items-center justify-center">
+                    <div class="color-1 text-white py-1 px-2 text-xs rounded-md flex flex-grow justify-center color-5-hover cursor-pointer ">
+                        <p>My Account</p>
+                    </div>
+                    <div class="color-1 text-white py-1 px-2 text-xs rounded-md flex flex-grow justify-center color-5-hover cursor-pointer ">
+                        <p>Reservations</p>
+                    </div>
+                </div>
+                <div class="flex flex-row flex-grow justify-between items-center content-center color-1 text-white py-1 px-2 text-xs rounded-md mt-2 color-5-hover cursor-pointer ">
+                    <p><i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-lg"></i></p>
+                    <p>Logout</p>
+                </div>
+            </div>
+        </div>
+        <div id="mobile" class="md:hidden h-14 color-2 py-1 px-2 flex flex-row justify-between items-center content-center header-border arial">
+            <div id="mobileToggle" class="flex flex-row p-2 cursor-pointer">
+                <p><i id="mobileToggleIcon" class="fa-solid fa-bars fa-xl"></i></p>
+            </div>
+            <div class="flex flex-row">
+                <img src="LogoBlackSquareTransparent.png" alt="Provisio Logo" class="w-48" />
+            </div>
+            <div id="userToggle" class="flex flex-row p-2 cursor-pointer">
+                <p><i class="fa-solid fa-circle-user fa-xl"></i></p>
+            </div>
+        </div>
+        <div id="mobileDropdown" class="md:hidden color-2 hidden flex flex-col arial">
+            <div class="h-14 p-2 flex flex-row content-center items-center justify-between header-border color-3-hover cursor-pointer hover:text-zinc-700">
+                <div><i class="fa-solid fa-circle-info fa-2x"></i></div>
+                <div><p>About Us</p></div>
+            </div>
+            <div class="h-14 p-2 flex flex-row content-center items-center justify-between header-border color-3-hover cursor-pointer hover:text-zinc-700">
+                <div><i class="fa-solid fa-calendar fa-2x"></i></div>
+                <div><p>Reserve</p></div>
+            </div>
+            <div class="h-14 p-2 flex flex-row content-center items-center justify-between header-border color-3-hover cursor-pointer hover:text-zinc-700">
+                <div><i class="fa-solid fa-magnifying-glass fa-2x"></i></div>
+                <div><p>Reservation Lookup</p></div>
+            </div>
+            <div class="h-14 p-2 flex flex-row content-center items-center justify-between header-border color-3-hover cursor-pointer hover:text-zinc-700">
+                <div><i class="fa-solid fa-phone fa-2x"></i></div>
+                <div><p>Contact Us</p></div>
+            </div>
+        </div>
+        <div id="userDropdown" class="md:hidden color-2 hidden flex flex-col arial">
+            <div class="h-14 p-2 flex flex-row content-center items-center justify-between header-border color-3-hover cursor-pointer hover:text-zinc-700">
+                <div><i class="fa-solid fa-users fa-2x"></i></div>
+                <div><p>Join</p></div>
+            </div>
+            <div class="h-14 p-2 flex flex-row content-center items-center justify-between header-border color-3-hover cursor-pointer hover:text-zinc-700">
+                <div><i class="fa-solid fa-sign-in fa-2x"></i></div>
+                <div><p>Sign In</p></div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        let mobileDropdown = document.getElementById('mobileDropdown');
+        let mobileToggle = document.getElementById('mobileToggle');
+        let userDropdown = document.getElementById('userDropdown');
+        let userToggle = document.getElementById('userToggle');
+        let desktopDropdown = document.getElementById('desktopDropdown');
+        let desktopToggle = document.getElementById('desktopToggle');
+        let mobileToggleIcon = document.getElementById('mobileToggleIcon');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileDropdown.classList.toggle('hidden');
+            mobileToggleIcon.classList.toggle('fa-bars');
+            mobileToggleIcon.classList.toggle('fa-x');
+            if(!userDropdown.classList.contains('hidden')) {
+                userDropdown.classList.toggle('hidden');
+            }
+        })
+
+        userToggle.addEventListener('click', () => {
+            userDropdown.classList.toggle('hidden');
+            if(!mobileDropdown.classList.contains('hidden')) {
+                mobileDropdown.classList.toggle('hidden');
+                mobileToggleIcon.classList.toggle('fa-bars');
+                mobileToggleIcon.classList.toggle('fa-x');
+            }
+        })
+
+        desktopToggle.addEventListener('click', () => {
+            desktopDropdown.classList.toggle('hidden');
+        })
+    </script>
+</body>
+</html>

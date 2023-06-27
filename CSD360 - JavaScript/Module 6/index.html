@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        5/29/22
+        Module 6
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6 - Jason Palmeri</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-grow {
+            flex-grow: 1;
+        }
+        #maindiv {
+            font-weight: bold;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body style="background: #b0d5f5;">
+    <div class="flex flex-grow">
+        <div id="maindiv" class="flex flex-grow" style="justify-content: center; align-items: center; align-content: center; text-align: center; flex-direction: column;">
+            <h1>Fibonacci Numbers 1 - 30</h1>
+
+        </div>
+    </div>
+    <script>
+        let main = document.getElementById("maindiv");
+        main.innerHTML += "1 - 1" + "<br/>";
+        main.innerHTML += "2 - 1" + "<br/>";
+        let previous = 1;
+        let secondPrevious = 1;
+        let totalizer;
+        for(let counter = 3; counter <= 30; counter++) {
+            totalizer = previous + secondPrevious;
+            previous = secondPrevious;
+            secondPrevious = totalizer;
+            main.innerHTML += counter + " - " + totalizer + "<br/>";
+        }
+        document.write(`<a style="font-size: larger; position: absolute; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

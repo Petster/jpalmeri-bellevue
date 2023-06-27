@@ -1,0 +1,5 @@
+
+
+Originally I stated that ForEach is faster because by the looks of my test it was faster to iterate through both arrays. In your comment on my assignment you mentioned the difference is between ArrayList and LinkedList, which I was unaware that was what we were supposed to be testing. Originally I was only testing a Linked List with both iteration and the .get method. I have now redone the assignment with the LinkedList going through iteration and the ArrayList going through the .get method.
+
+After looking at the results its clear to see that a ArrayList is incrediblly faster when storing and reading 500000 values, with a speed of 2051 ms vs 20710ms. With these results I would say that iterating through an ArrayList is faster, it does always come down to what you need to do with them, and in some cases one could be better than the other.

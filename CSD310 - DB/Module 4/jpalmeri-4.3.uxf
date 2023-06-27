@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>60</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>STUDENT
+--
+student_id
+--
+first_name
+--
+last_name
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>60</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>ENTROLLMENT
+--
+term
+--
+gpa
+--
+start_date
+--
+end_date
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>260</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>COURSE
+--
+course_id
+--
+description
+--
+instructor
+--
+grade</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>40</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+has</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>160</y>
+      <w>70</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+has</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>140</y>
+      <w>90</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+enrolls in</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>400</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>STUDENT
+--
+{
+  "student_id": "3",
+  "first_name": "John",
+  "last_name": "Doe"
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>400</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ENTROLLMENT
+--
+{
+  "term": "Summer",
+  "gpa": "3.4",
+  "start_date": "2/02/22",
+  "end_date": "7/02/22"
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>600</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>COURSE
+--
+{
+  "course_id": "54",
+  "description": "course 1!",
+  "instructor": "James Rice",
+  "grade": "A"
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>380</y>
+      <w>300</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+has</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>520</y>
+      <w>70</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+has</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>480</y>
+      <w>100</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+enrolls in</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;120.0</additional_attributes>
+  </element>
+</diagram>

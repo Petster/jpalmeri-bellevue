@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        6/3/22
+        Module 10
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Palmeri Module 10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="col" class="bg-blue-100">
+    <div class="p-4 w-full min-h-screen flex flex-col md:w-3/4 mx-auto" id="top">
+        <div id="font">
+        <div class="text-center flex flex-col content-center items-center justify-center">
+            <h1 class="font-bold text-2xl">My World of Warcraft Characters</h1>
+            <p>There is already an example Character search in the form below!</p>
+            <p>More of my Characters you can try: (Name - Realm)</p>
+            <ul class="font-bold">
+                <li>Miikefiorini - Illidan</li>
+                <li>Saatella - Area 52</li>
+                <li>Shigoigwa - Dalaran</li>
+                <li>Mikefiorini - Sargeras</li>
+            </ul>
+            <div class="flex flex-row gap-4">
+                <div class="flex flex-col">
+                    <label>Background Color:</label>
+                    <select id="bgSelect" class="p-2 rounded-md m-2">
+                        <option value="blue">blue</option>
+                        <option value="red">red</option>
+                        <option value="yellow">yellow</option>
+                        <option value="green">green</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <label>Font Family:</label>
+                    <select id="ffSelect" class="p-2 rounded-md m-2">
+                        <option value="sans">sans</option>
+                        <option value="serif">serif</option>
+                        <option value="mono">mono</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="root" class="text-center flex p-12 flex-wrap content-center items-center justify-center gap-4">
+            
+        </div>
+        <form class="flex flex-col gap-4 sticky bottom-5 backdrop-filter backdrop-blur-md bg-black bg-opacity-40 rounded-md text-white p-2">
+            <div class="flex flex-col">
+                <label for="charname">Character Name</label>
+                <input value="Windeltep" required id="charname" type="text" name="charname" class="text-black"/>
+            </div>
+            <div class="flex flex-col">
+                <label for="charrealm">Character Realm</label>
+                <input value="Sargeras" required  id="charrealm" type="text" name="charrealm" class="text-black"/>
+            </div>
+            <div class="flex flex-col">
+                <button id="searchChar" class="font-bold bg-green-500 hover:bg-green-300 p-2 rounded-md" type="button">Search</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <script>
+        function createCard(da) {
+            root.innerHTML += `
+            <a href=${da.profile_url} target='_blank'>
+                <span class='sr-only'>Profile URL</span>
+                <div class='bg-white p-2 rounded-md w-64 h-64 border-2 border-black flex flex-col'>
+                    <div class='text-center pb-2 font-bold text-xl'>${da.name}</div>
+                    <div class='text-orange-500 font-bold pb-2'>${da.active_spec_name} ${da.class}</div>
+                    <div class='mx-auto pb-2'><img src=${da.thumbnail_url} alt='${da.name} Profile Picture'/></div>
+                    <div class='font-bold'>${da.region.toUpperCase()} ${da.realm}</div>
+                    <div class="font-bold">Item Level: ${da.gear.item_level_equipped}</div>
+                </div>
+            </a>
+            `;
+        }
+
+        function fetchPlayer(playerName, realm) {
+            fetch(`https://raider.io/api/v1/characters/profile?region=us&realm=${realm}&name=${playerName}&fields=mythic_plus_weekly_highest_level_runs,gear,covenant`).then(response => response.json()).then(data => data).then(function(data) {
+                createCard(data);
+            });
+        }
+
+        fetchPlayer('Pepegamike', 'Thrall');
+        fetchPlayer('Eltep', 'Thrall');
+        fetchPlayer('Catnelf', 'Sargeras');
+        fetchPlayer('Mezzii', 'Thrall');
+
+        let button = document.getElementById('searchChar');
+        let charName = document.getElementById('charname');
+        let charRealm = document.getElementById('charrealm');
+
+        button.addEventListener('click', function() {
+            fetchPlayer(charName.value, charRealm.value);
+        });
+
+        let bgSelect = document.getElementById('bgSelect');
+
+        bgSelect.addEventListener('change', function() {
+            let body = document.getElementById('col');
+            switch(bgSelect.value) {
+                case 'blue':
+                    body.removeAttribute('class');
+                    body.classList.add('bg-blue-100');
+                    break;
+                case 'red':
+                    body.removeAttribute('class');
+                    body.classList.add('bg-red-100');
+                    break;
+                case 'yellow':
+                    body.removeAttribute('class');
+                    body.classList.add('bg-yellow-100');
+                    break;
+                case 'green':
+                    body.removeAttribute('class');
+                    body.classList.add('bg-green-100');
+                    break;
+            }
+        });
+
+        let ffSelect = document.getElementById('ffSelect');
+
+        ffSelect.addEventListener('change', function() {
+            let main = document.getElementById('font');
+            switch(ffSelect.value) {
+                case 'sans':
+                    main.removeAttribute('class');
+                    main.classList.add('font-sans');
+                    break;
+                case 'serif':
+                    main.removeAttribute('class');
+                    main.classList.add('font-serif');
+                    break;
+                case 'mono':
+                    main.removeAttribute('class');
+                    main.classList.add('font-mono');
+                    break;
+            }
+        });
+
+        document.write(`<a style="font-size: larger; position: fixed; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

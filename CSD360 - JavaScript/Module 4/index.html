@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        5/26/22
+        Module 4
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4 - Jason Palmeri</title>
+</head>
+<body>
+    
+    <script>
+        let i = 842;
+
+        let equation = i + i % 3 / 7 - 2 + 7 ** 3;
+        document.write("Original output: <br/>" + equation + "<br/><br/>");
+
+        equation = (i + i) % 3 / 7 - 2 + 7 ** 3;
+        document.write("Expected '341.14285714285717': <br/>" + equation + "<br/><br/>");
+
+        equation = i + i % 3 / (7 - 2) + 7 ** 3;
+        document.write("Expected '1185.4': <br/>" + equation + "<br/><br/>");
+
+        equation = i + i % 3 / (((7 - 2) + 7) ** 3);
+        document.write("Expected '842.0011574074074': <br/>" + equation + "<br/><br/>");
+
+        equation = i + i % 3 / 7 - (2 + 7) ** 3;
+        document.write("Expected '113.28571428571433': <br/>" + equation + "<br/><br/>");
+
+        equation = (i + i) % 3 / (7 - 2) + 7 ** 3;
+        document.write("Expected '343.2': <br/>" + equation + "<br/><br/>");
+
+        equation = i + i % 3 / ((7 - (2 + 7)) ** 3);
+        document.write("Expected '841.75': <br/>" + equation + "<br/><br/>");
+    
+        document.write(`<a style="font-size: larger; position: absolute; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

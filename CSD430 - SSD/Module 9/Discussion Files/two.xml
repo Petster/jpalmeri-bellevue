@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="styles.css"?>
+<todo-list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Todo.xsd">
+    <todo-item>
+        <todo-name>Item 1</todo-name>
+        <todo-body>
+            <todo-date>10/20/2022</todo-date>
+            <todo-content>Get birthday present for brother</todo-content>
+        </todo-body>
+    </todo-item>
+    <todo-item>
+        <todo-name>Item 2</todo-name>
+        <todo-body>
+            <todo-date>12/20/2022</todo-date>
+            <todo-content>Christmas Shopping</todo-content>
+        </todo-body>
+    </todo-item>
+    <todo-item>
+        <todo-name>Item 3</todo-name>
+        <todo-body>
+            <todo-date>01/20/2023</todo-date>
+            <todo-content>Get Ready</todo-content>
+        </todo-body>
+    </todo-item>
+</todo-list>

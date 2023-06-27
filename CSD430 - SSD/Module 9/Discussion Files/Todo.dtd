@@ -1,0 +1,7 @@
+<!ELEMENT todo-list (todo-item+)>
+<!ELEMENT todo-item (todo-name, todo-body)>
+<!ELEMENT todo-body (todo-date, todo-content)>
+<!ELEMENT todo-name (#PCDATA)>
+<!ELEMENT todo-date (#PCDATA)>
+<!ELEMENT todo-content (#PCDATA)>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Palmeri - CSD360</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-blue-200 p-4 w-full min-h-screen flex flex-col md:w-3/4 mx-auto">
+    <div class="flex flex-grow flex-col content-center items-center justify-center">
+        <div class="flex flex-col">
+            <div>
+                <h1 class="text-5xl font-bold">Jason Palmeri - CSD360</h1>
+                <div class="h-1 bg-black"></div>
+            </div>
+            <div class="justify-center items-center content-center flex p-2 gap-4">
+                <a title="Github" class="text-purple-500 hover:text-purple-300" href="https://github.com/Petster"><span class="sr-only">Github</span><i class="fa-brands fa-github text-4xl"></i></a>
+                <a title="LinkedIn" class="text-purple-500 hover:text-purple-300" href="https://www.linkedin.com/in/jasontpalmeri/"><span class="sr-only">LinkedIn</span><i class="fa-brands fa-linkedin text-4xl"></i></a>
+                <a title="My Portfolio" class="text-purple-500 hover:text-purple-300" href="https://portfolio.petstergaming.com/"><span class="sr-only">My Portfolio</span><i class="fa-solid fa-earth-americas text-4xl"></i></a>
+            </div>
+        </div>
+        <div class="flex flex-wrap w-2/3 justify-center" id="folderList">
+
+        </div>
+    </div>
+    <script>
+        let folders = [
+            {
+                'title': 'Module 3',
+                'url': './Module%203/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 4',
+                'url': './Module%204/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 5',
+                'url': './Module%205/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 6',
+                'url': './Module%206/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 7',
+                'url': './Module%207/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 8',
+                'url': './Module%208/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 9',
+                'url': './Module%209/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 10',
+                'url': './Module%2010/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 11',
+                'url': './Module%2011/index.html',
+                'status': 1
+            },
+            {
+                'title': 'Module 12',
+                'url': './Module%2012/index.html',
+                'status': 0
+            },
+        ];
+
+        let folderList = document.getElementById('folderList');
+        folders.map((da, index) => {
+            folderList.innerHTML += (`
+                <a title="${da.status ? da.title : 'Not Available'}" class="${da.status ? 'bg-purple-500 hover:bg-purple-300' : 'bg-gray-500 hover:bg-gray-300 cursor-default'} text-white hover:text-black p-4 rounded-md m-2 border-2 border-black w-64" href=${da.status ? da.url : "#"}>
+                    <div>
+                        <h1 class="text-center font-bold mx-auto">${da.title}</h1>
+                    </div>
+                </a>
+            `)
+        })
+    </script>
+</body>
+</html>

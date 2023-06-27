@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+
+        Jason Palmeri
+        6/2/22
+        Module 9
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Palmeri Module 9</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body class="bg-blue-100">
+    <div class="p-4 w-full min-h-screen flex flex-col md:w-3/4 mx-auto" id="top">
+        <div id="root" class="text-center flex flex-grow content-center items-center justify-center">
+            
+        </div>
+    </div>
+
+    <script>
+        let myList = [];
+        for(let i = 0; i < 50; i++) {
+            let temp = Math.floor(Math.random() * (2 + 1));
+            if(temp > 1) {
+                myList.push(-1);
+            } else {
+                myList.push(temp);
+            }
+        }
+        console.log(myList);
+        
+        let newList = Counter(myList);
+
+        console.log(newList);
+
+        let root = document.getElementById('root');
+        root.innerHTML += `Original Array: ${myList}<br/>`;
+        root.innerHTML += `Counter Array: ${newList}<br/>`;
+        root.innerHTML += `Negatives: ${newList[0]}<br/>`;
+        root.innerHTML += `Zeros: ${newList[1]}<br/>`;
+        root.innerHTML += `Positives: ${newList[2]}<br/>`;
+
+        function Counter(list) {
+            let returnArr = [];
+            let negativeCounter = 0;
+            let zeroCounter = 0;
+            let positiveCounter = 0;
+
+            list.forEach(da => {
+                if(da < 0) {
+                    negativeCounter++;
+                } else if(da === 0) {
+                    zeroCounter++;
+                } else if(da > 0) {
+                    positiveCounter++;
+                }
+            });
+
+            returnArr.push(negativeCounter);
+            returnArr.push(zeroCounter);
+            returnArr.push(positiveCounter);
+
+            return returnArr;
+        }
+
+        document.write(`<a style="font-size: larger; position: fixed; bottom: 0; right: 0; padding: 20px;" href="../index.html">Back to Home</a>`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    padding: 25px;
+    margin: 0 auto;
+}
+todo-item {
+    font-size: 1.5rem;
+    background: rgb(218, 218, 218);
+    border: 1px solid black;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+todo-item:hover {
+    background: rgb(119, 119, 119);
+    color: white;
+}
+todo-name {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+todo-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>170</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PUBLISHER
+--
+Name
+--
+Code
+--
+Address</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>170</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>BOOK
+--
+Name
+--
+ISBN
+--
+Price</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>170</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>AUTHOR
+--
+First Name
+--
+Last Name
+--
+Phone
+--
+Email</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>150</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+can write &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>150</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.*
+m2=1.1
+&lt; can publish</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>340</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>PUBLISHER
+--
+{
+  "name": "PublisherCompany",
+  "code": "245135234",
+  "address": "123 North Drive"
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>340</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>BOOK
+--
+{
+  "name": "Book1",
+  "isbn": "214352461234",
+  "price": "24.99"
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>340</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>AUTHOR
+--
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "phone": "1234567890",
+  "email": "123@example.com"
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>320</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.1
+m2=1.*
+can write &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>320</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.*
+m2=1.1
+&lt; can publish</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+</diagram>

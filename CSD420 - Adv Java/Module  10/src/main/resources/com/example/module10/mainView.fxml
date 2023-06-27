@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="680.0" prefWidth="783.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module10.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <children>
+         <Label text="Create Dataset" textAlignment="CENTER" underline="true">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Label>
+         <Label fx:id="createError" alignment="CENTER" textFill="RED" underline="true">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+      
+          <HBox alignment="CENTER">
+              <TextField fx:id="createID" promptText="User ID" />
+              <TextField fx:id="createFname" layoutX="10.0" layoutY="10.0" promptText="First Name" />
+              <TextField fx:id="createLname" layoutX="159.0" layoutY="10.0" promptText="Last Name" />
+              <TextField fx:id="createTeam" layoutX="159.0" layoutY="10.0" promptText="Favorite Team" />
+          </HBox>
+         <Button fx:id="insertButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#insertButton" prefHeight="25.0" prefWidth="310.0" style="-fx-padding: 10;" text="Create Data">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></Button>
+      </children>
+   </VBox>
+   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <children>
+         <Label text="View Dataset" textAlignment="CENTER" underline="true">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Label>
+         <Label fx:id="viewError" alignment="CENTER" textFill="RED" underline="true">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+         <HBox alignment="CENTER">
+            <children>
+               <TextField fx:id="viewID" alignment="CENTER" prefHeight="25.0" prefWidth="545.0" promptText="User ID" />
+            </children>
+         </HBox>
+         <Button fx:id="viewButton" mnemonicParsing="false" onAction="#viewButton" prefHeight="25.0" prefWidth="310.0" text="Query ID" />
+      </children>
+   </VBox>
+   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <children>
+         <Label text="Update Dataset" textAlignment="CENTER" underline="true">
+            <font>
+               <Font size="26.0" />
+            </font>
+         </Label>
+         <Label fx:id="updateError" alignment="CENTER" textFill="RED" underline="true">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+         <HBox alignment="CENTER">
+            <children>
+               <TextField fx:id="updateID" promptText="User ID" />
+               <TextField fx:id="updateFname" layoutX="10.0" layoutY="10.0" promptText="First Name" />
+               <TextField fx:id="updateLname" layoutX="159.0" layoutY="10.0" promptText="Last Name" />
+               <TextField fx:id="updateTeam" layoutX="159.0" layoutY="10.0" promptText="Favorite Team" />
+            </children>
+         </HBox>
+         <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateButton" prefHeight="25.0" prefWidth="310.0" text="Update ID" />
+      </children>
+   </VBox>
+
+</VBox>

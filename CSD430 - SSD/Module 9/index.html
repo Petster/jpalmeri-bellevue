@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPath Example</title>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+
+    <script>
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                showResult(xhttp.responseXML);
+            }
+        };
+        xhttp.open("GET", "Discussion Files/one.xml", true);
+        xhttp.send();
+
+        function showResult(xml) {
+            let txt = "";
+            path = "/todo-list/todo-item/todo-name"
+            if(xml.evaluate) {
+                let nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                let result = nodes.iterateNext();
+                while(result) {
+                    txt += result.childNodes[0].nodeValue + "<br/>";
+                    result = nodes.iterateNext();
+                }
+            }
+            document.getElementById('test').innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

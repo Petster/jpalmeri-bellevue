@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Jason Palmeri - Bellevue University - Software Development BS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            body {
+                background-image: url('https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            /*PHOTO CREDIT:
+                https://unsplash.com/photos/KonWFWUaAuk
+                Ken Cheung
+            */
+        </style>
+    </head>
+    <body class="bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm">
+        <div class="min-h-screen container mx-auto">
+            <div class="mx-auto text-center p-4">
+                <h1 class="text-4xl text-white font-bold font-monospace">Jason Palmeri's Bachelors School Work</h1>
+                <h2 class="text-xl text-white font-bold font-monospace">Bellevue University/Foothill CC | BS Software Development</h2>
+                <h3 class="text-md text-white font-bold font-monospace">Graduated July 2023 - All repositories now open</h3>
+                <hr/>
+            </div>
+            <div class="flex flex-row content-center items-center justify-between gap-4 p-2">
+                <a href="https://twitter.com/Petsterr" target="_blank" class="bg-white rounded-md p-6 hover:bg-gray-200 cursor-pointer">
+                    <i class="fa-brands fa-twitter text-blue-300 text-6xl"></i>
+                </a>
+                <a href="https://github.com/Petster" target="_blank" class="bg-white rounded-md p-6 hover:bg-gray-200 cursor-pointer">
+                    <i class="fa-brands fa-github text-purple-600 text-6xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jasontpalmeri/" target="_blank" class="bg-white rounded-md p-6 hover:bg-gray-200 cursor-pointer">
+                    <i class="fa-brands fa-linkedin text-blue-600 text-6xl"></i>
+                </a>
+                <a href="https://portfolio.petstergaming.com/" target="_blank" class="bg-white rounded-md p-6 hover:bg-gray-200 cursor-pointer">
+                    <i class="fa-solid fa-folder text-orange-400 text-6xl"></i>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 gap-4 p-2">
+                <a target='_blank' class='border-transparent border-2 hover:border-black hover:bg-gray-300 text-center font-bold bg-white rounded-md p-3' href='https://github.com/Petster/Provisio'>Software Development Capstone Project</a>
+            </div>
+            <div id="list" class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-2">
+
+            </div>
+        </div>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        "use strict";
+
+        const folders = [
+            "JAPN001 - Elementary Japanese",
+            "DSAJ01C - Data Structures & Algorithms",
+            "CS0055A - AWS",
+            "CS0053C - Ethical Hacking",
+            "LA400-410-420 - Kirkpatrick",
+            "CSD440 - SSS",
+            "CSD460 - Capstone",
+            "CSD380 - DevOps",
+            "CSD430 - SSD",
+            "CSD360 - JavaScript",
+            "CSD420 - Adv Java",
+            "CSD405 - Int Java",
+            "CSD200 - Foundation of SD",
+            "CSD205 - Python I",
+            "CSD310 - DB",
+            "CSD320 - Java",
+            "WEB200 - Fundamentals of Web Dev",
+            "WEB201 - Internet Systems Architecture"
+        ];
+
+        for(let i = 0; i < folders.length; i++) {
+            $('#list').append("<a target='_blank' class='border-transparent border-2 hover:border-black hover:bg-gray-300 text-center font-bold bg-white rounded-md p-3' href='https://github.com/Petster/Bellevue/tree/main/" + folders[i].split(' ').join('%20').split('@').join('%40') + "'>"+folders[i]+"</a>");
+        }
+    </script>
+</html>

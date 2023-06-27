@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.module8.MainController">
+    <content>
+        <VBox alignment="CENTER" spacing="20.0">
+            <padding>
+                <Insets top="10" right="20" bottom="30" left="40"/>
+            </padding>
+
+            <Button fx:id="letterButton" onAction="#letterClick">Letter Thread Output</Button>
+            <Text fx:id="letterThreadLabel" wrappingWidth="500"/>
+
+            <Button fx:id="numberButton" onAction="#numberClick">Number Thread Output</Button>
+            <Text fx:id="numberThreadLabel" wrappingWidth="500"/>
+
+            <Button fx:id="symbolButton" onAction="#symbolClick">Symbol Thread Output</Button>
+            <Text fx:id="symbolThreadLabel" wrappingWidth="500"/>
+        </VBox>
+    </content>
+</ScrollPane>

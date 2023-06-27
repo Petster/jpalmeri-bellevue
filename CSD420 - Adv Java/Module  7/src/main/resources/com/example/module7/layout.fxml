@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import java.net.URL?>
+
+<HBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml">
+
+    <HBox alignment="CENTER" styleClass="border">
+        <Circle styleClass="plaincircle" fx:id="circle1" centerY="200" centerX="200" radius="50"></Circle>
+    </HBox>
+
+    <Circle styleClass="plaincircle" fx:id="circle2" centerY="200" centerX="200" radius="50"></Circle>
+    <Circle fx:id="redcircle" centerY="200" centerX="200" radius="50"></Circle>
+    <Circle fx:id="greencircle" centerY="200" centerX="200" radius="50"></Circle>
+
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+</HBox>
