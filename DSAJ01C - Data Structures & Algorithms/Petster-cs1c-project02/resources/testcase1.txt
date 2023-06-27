@@ -1,0 +1,10 @@
+apples,3.00
+bread,2.50
+cheese,5.75
+chips,3.50
+eggs,2.75
+grapes,4.25
+ice cream,6.00
+pizza,9.50
+peanuts,2.25
+milk,3.67

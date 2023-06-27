@@ -1,0 +1,1299 @@
+-----------------------------------------------------
+---------------------RouteFinder---------------------
+-----------------------------------------------------
+-----------------------------------------------------
+Test file:  resources/BaseballCitiesEdgeCosts.txt
+
+NOTES:
+Starting City:  "San Francisco"
+Destinations: "Boston", "Chicago A", "Chicago N"
+Avoiding: "Los Angeles X", "Milwaukee"
+
+PURPOSE OF TEST:
+To test that the main application works using the original test case
+
+OBSERVATION:
+Does your observation match your expected result?
+- Yes I got the correct results, as a default test case this will help me later
+    to ensure other tests are correct
+Was there a suprising result?
+- Nothing suprising here, everything was as expected
+What do you want to furthur investigate?
+- I want to see if I can find the farthest path, which starting city and ending city would
+    result in the longest path
+-----------------------------------------------------
+The list of cities has 414 items.
+Connections found between cities hosting Baseball games:
+[Atlanta, Baltimore, 576
+, Atlanta, Boston, 935
+, Atlanta, Chicago A, 586
+, Atlanta, Chicago N, 586
+, Atlanta, Cincinnati, 373
+, Atlanta, Cleveland, 555
+, Atlanta, Dallas, 719
+, Atlanta, Detroit, 597
+, Atlanta, Houston, 700
+, Atlanta, Kansas City, 675
+, Atlanta, Miami, 605
+, Atlanta, Milwaukee, 669
+, Atlanta, Minneapolis, 907
+, Atlanta, New York A, 745
+, Atlanta, New York N, 745
+, Atlanta, Philadelphia, 665
+, Atlanta, Pittsburgh, 521
+, Atlanta, St. Louis, 467
+, Atlanta, Tampa, 416
+, Atlanta, Toronto, 734
+, Atlanta, Washington DC, 871
+, Baltimore, Atlanta, 576
+, Baltimore, Boston, 359
+, Baltimore, Chicago A, 604
+, Baltimore, Chicago N, 604
+, Baltimore, Cincinnati, 419
+, Baltimore, Cleveland, 307
+, Baltimore, Detroit, 396
+, Baltimore, Kansas City, 960
+, Baltimore, Miami, 955
+, Baltimore, Milwaukee, 641
+, Baltimore, Minneapolis, 937
+, Baltimore, New York A, 169
+, Baltimore, New York N, 169
+, Baltimore, Philadelphia, 89
+, Baltimore, Pittsburgh, 196
+, Baltimore, St. Louis, 730
+, Baltimore, Tampa, 851
+, Baltimore, Toronto, 333
+, Baltimore, Washington DC, 57
+, Boston, Atlanta, 935
+, Boston, Baltimore, 359
+, Boston, Chicago A, 849
+, Boston, Chicago N, 849
+, Boston, Cincinnati, 733
+, Boston, Cleveland, 549
+, Boston, Detroit, 611
+, Boston, Milwaukee, 855
+, Boston, New York A, 189
+, Boston, New York N, 189
+, Boston, Philadelphia, 270
+, Boston, Pittsburgh, 481
+, Boston, Toronto, 429
+, Boston, Washington DC, 633
+, Chicago A, Atlanta, 586
+, Chicago A, Baltimore, 604
+, Chicago A, Boston, 849
+, Chicago A, Cincinnati, 250
+, Chicago A, Cleveland, 307
+, Chicago A, Dallas, 801
+, Chicago A, Denver, 916
+, Chicago A, Detroit, 237
+, Chicago A, Houston, 938
+, Chicago A, Kansas City, 412
+, Chicago A, Milwaukee, 81
+, Chicago A, Minneapolis, 354
+, Chicago A, New York A, 711
+, Chicago A, New York N, 711
+, Chicago A, Philadelphia, 664
+, Chicago A, Pittsburgh, 409
+, Chicago A, St. Louis, 262
+, Chicago A, Toronto, 468
+, Chicago A, Washington DC, 955
+, Chicago N, Atlanta, 586
+, Chicago N, Baltimore, 604
+, Chicago N, Boston, 849
+, Chicago N, Cincinnati, 250
+, Chicago N, Cleveland, 307
+, Chicago N, Dallas, 801
+, Chicago N, Denver, 916
+, Chicago N, Detroit, 237
+, Chicago N, Houston, 938
+, Chicago N, Kansas City, 412
+, Chicago N, Milwaukee, 81
+, Chicago N, Minneapolis, 354
+, Chicago N, New York A, 711
+, Chicago N, New York N, 711
+, Chicago N, Philadelphia, 664
+, Chicago N, Pittsburgh, 409
+, Chicago N, St. Louis, 262
+, Chicago N, Toronto, 468
+, Chicago N, Washington DC, 955
+, Cincinnati, Atlanta, 373
+, Cincinnati, Baltimore, 419
+, Cincinnati, Boston, 733
+, Cincinnati, Chicago A, 250
+, Cincinnati, Chicago N, 250
+, Cincinnati, Cleveland, 217
+, Cincinnati, Dallas, 817
+, Cincinnati, Detroit, 230
+, Cincinnati, Houston, 896
+, Cincinnati, Kansas City, 541
+, Cincinnati, Miami, 955
+, Cincinnati, Milwaukee, 324
+, Cincinnati, Minneapolis, 604
+, Cincinnati, New York A, 567
+, Cincinnati, New York N, 567
+, Cincinnati, Philadelphia, 501
+, Cincinnati, Pittsburgh, 256
+, Cincinnati, St. Louis, 308
+, Cincinnati, Tampa, 779
+, Cincinnati, Toronto, 407
+, Cincinnati, Washington DC, 401
+, Cleveland, Atlanta, 555
+, Cleveland, Baltimore, 307
+, Cleveland, Boston, 549
+, Cleveland, Chicago A, 307
+, Cleveland, Chicago N, 307
+, Cleveland, Cincinnati, 217
+, Cleveland, Detroit, 90
+, Cleveland, Kansas City, 698
+, Cleveland, Milwaukee, 334
+, Cleveland, Minneapolis, 629
+, Cleveland, New York A, 403
+, Cleveland, New York N, 403
+, Cleveland, Philadelphia, 358
+, Cleveland, Pittsburgh, 114
+, Cleveland, St. Louis, 491
+, Cleveland, Tampa, 937
+, Cleveland, Toronto, 188
+, Cleveland, Washington DC, 304
+, Dallas, Atlanta, 719
+, Dallas, Chicago A, 801
+, Dallas, Chicago N, 801
+, Dallas, Cincinnati, 817
+, Dallas, Denver, 661
+, Dallas, Detroit, 999
+, Dallas, Houston, 225
+, Dallas, Kansas City, 454
+, Dallas, Milwaukee, 857
+, Dallas, Minneapolis, 863
+, Dallas, Phoenix, 883
+, Dallas, St. Louis, 547
+, Dallas, Tampa, 916
+, Denver, Chicago A, 916
+, Denver, Chicago N, 916
+, Denver, Dallas, 661
+, Denver, Houston, 877
+, Denver, Kansas City, 557
+, Denver, Los Angeles A, 829
+, Denver, Los Angeles N, 829
+, Denver, Milwaukee, 912
+, Denver, Minneapolis, 698
+, Denver, Oakland, 938
+, Denver, Phoenix, 585
+, Denver, San Diego, 832
+, Denver, San Francisco, 946
+, Denver, St. Louis, 794
+, Detroit, Atlanta, 597
+, Detroit, Baltimore, 396
+, Detroit, Boston, 611
+, Detroit, Chicago A, 237
+, Detroit, Chicago N, 237
+, Detroit, Cincinnati, 230
+, Detroit, Cleveland, 90
+, Detroit, Dallas, 999
+, Detroit, Kansas City, 643
+, Detroit, Milwaukee, 251
+, Detroit, Minneapolis, 542
+, Detroit, New York A, 480
+, Detroit, New York N, 480
+, Detroit, Philadelphia, 441
+, Detroit, Pittsburgh, 250
+, Detroit, St. Louis, 454
+, Detroit, Tampa, 994
+, Detroit, Toronto, 206
+, Detroit, Washington DC, 393
+, Houston, Atlanta, 700
+, Houston, Chicago A, 938
+, Houston, Chicago N, 938
+, Houston, Cincinnati, 896
+, Houston, Dallas, 225
+, Houston, Denver, 877
+, Houston, Kansas City, 646
+, Houston, Miami, 965
+, Houston, St. Louis, 679
+, Houston, Tampa, 789
+, Kansas City, Atlanta, 675
+, Kansas City, Baltimore, 960
+, Kansas City, Chicago A, 412
+, Kansas City, Chicago N, 412
+, Kansas City, Cincinnati, 541
+, Kansas City, Cleveland, 698
+, Kansas City, Dallas, 454
+, Kansas City, Denver, 557
+, Kansas City, Detroit, 643
+, Kansas City, Houston, 646
+, Kansas City, Milwaukee, 441
+, Kansas City, Minneapolis, 411
+, Kansas City, Pittsburgh, 779
+, Kansas City, St. Louis, 237
+, Kansas City, Toronto, 846
+, Kansas City, Washington DC, 940
+, Los Angeles A, Denver, 829
+, Los Angeles A, Oakland, 343
+, Los Angeles A, Phoenix, 356
+, Los Angeles A, San Diego, 111
+, Los Angeles A, San Francisco, 347
+, Los Angeles A, Seattle, 959
+, Los Angeles N, Denver, 829
+, Los Angeles N, Oakland, 343
+, Los Angeles N, Phoenix, 356
+, Los Angeles N, San Diego, 111
+, Los Angeles N, San Francisco, 347
+, Los Angeles N, Seattle, 959
+, Miami, Atlanta, 605
+, Miami, Baltimore, 955
+, Miami, Cincinnati, 955
+, Miami, Houston, 965
+, Miami, Tampa, 204
+, Milwaukee, Atlanta, 669
+, Milwaukee, Baltimore, 641
+, Milwaukee, Boston, 855
+, Milwaukee, Chicago A, 81
+, Milwaukee, Chicago N, 81
+, Milwaukee, Cincinnati, 324
+, Milwaukee, Cleveland, 334
+, Milwaukee, Dallas, 857
+, Milwaukee, Denver, 912
+, Milwaukee, Detroit, 251
+, Milwaukee, Kansas City, 441
+, Milwaukee, Minneapolis, 298
+, Milwaukee, New York A, 732
+, Milwaukee, New York N, 732
+, Milwaukee, Philadelphia, 692
+, Milwaukee, Pittsburgh, 445
+, Milwaukee, St. Louis, 327
+, Milwaukee, Toronto, 430
+, Milwaukee, Washington DC, 634
+, Minneapolis, Atlanta, 907
+, Minneapolis, Baltimore, 937
+, Minneapolis, Chicago A, 354
+, Minneapolis, Chicago N, 354
+, Minneapolis, Cincinnati, 604
+, Minneapolis, Cleveland, 629
+, Minneapolis, Dallas, 863
+, Minneapolis, Denver, 698
+, Minneapolis, Detroit, 542
+, Minneapolis, Kansas City, 411
+, Minneapolis, Milwaukee, 298
+, Minneapolis, Philadelphia, 983
+, Minneapolis, Pittsburgh, 741
+, Minneapolis, St. Louis, 466
+, Minneapolis, Toronto, 691
+, Minneapolis, Washington DC, 931
+, New York A, Atlanta, 745
+, New York A, Baltimore, 169
+, New York A, Boston, 189
+, New York A, Chicago A, 711
+, New York A, Chicago N, 711
+, New York A, Cincinnati, 567
+, New York A, Cleveland, 403
+, New York A, Detroit, 480
+, New York A, Milwaukee, 732
+, New York A, Philadelphia, 80
+, New York A, Pittsburgh, 314
+, New York A, St. Louis, 871
+, New York A, Toronto, 341
+, New York A, Washington DC, 328
+, New York N, Atlanta, 745
+, New York N, Baltimore, 169
+, New York N, Boston, 189
+, New York N, Chicago A, 711
+, New York N, Chicago N, 711
+, New York N, Cincinnati, 567
+, New York N, Cleveland, 403
+, New York N, Detroit, 480
+, New York N, Milwaukee, 732
+, New York N, Philadelphia, 80
+, New York N, Pittsburgh, 314
+, New York N, St. Louis, 871
+, New York N, Toronto, 341
+, New York N, Washington DC, 328
+, Oakland, Denver, 938
+, Oakland, Los Angeles A, 343
+, Oakland, Los Angeles N, 343
+, Oakland, Phoenix, 645
+, Oakland, San Diego, 454
+, Oakland, San Francisco, 8
+, Oakland, Seattle, 676
+, Philadelphia, Atlanta, 665
+, Philadelphia, Baltimore, 89
+, Philadelphia, Boston, 270
+, Philadelphia, Chicago A, 664
+, Philadelphia, Chicago N, 664
+, Philadelphia, Cincinnati, 501
+, Philadelphia, Cleveland, 358
+, Philadelphia, Detroit, 441
+, Philadelphia, Milwaukee, 692
+, Philadelphia, Minneapolis, 983
+, Philadelphia, New York A, 80
+, Philadelphia, New York N, 80
+, Philadelphia, Pittsburgh, 257
+, Philadelphia, St. Louis, 808
+, Philadelphia, Tampa, 927
+, Philadelphia, Toronto, 335
+, Philadelphia, Washington DC, 199
+, Pittsburgh, Atlanta, 521
+, Pittsburgh, Baltimore, 196
+, Pittsburgh, Boston, 481
+, Pittsburgh, Chicago A, 409
+, Pittsburgh, Chicago N, 409
+, Pittsburgh, Cincinnati, 256
+, Pittsburgh, Cleveland, 114
+, Pittsburgh, Detroit, 250
+, Pittsburgh, Kansas City, 779
+, Pittsburgh, Milwaukee, 445
+, Pittsburgh, Minneapolis, 741
+, Pittsburgh, New York A, 314
+, Pittsburgh, New York N, 314
+, Pittsburgh, Philadelphia, 257
+, Pittsburgh, St. Louis, 557
+, Pittsburgh, Tampa, 874
+, Pittsburgh, Toronto, 223
+, Pittsburgh, Washington DC, 189
+, Phoenix, Dallas, 883
+, Phoenix, Denver, 585
+, Phoenix, Los Angeles A, 356
+, Phoenix, Los Angeles N, 356
+, Phoenix, Oakland, 645
+, Phoenix, San Diego, 298
+, Phoenix, San Francisco, 652
+, San Diego, Denver, 832
+, San Diego, Los Angeles A, 111
+, San Diego, Los Angeles N, 111
+, San Diego, Oakland, 454
+, San Diego, Phoenix, 298
+, San Diego, San Francisco, 458
+, San Francisco, Denver, 946
+, San Francisco, Los Angeles A, 347
+, San Francisco, Los Angeles N, 347
+, San Francisco, Oakland, 8
+, San Francisco, Phoenix, 652
+, San Francisco, San Diego, 458
+, San Francisco, Seattle, 678
+, Seattle, Los Angeles A, 959
+, Seattle, Los Angeles N, 959
+, Seattle, Oakland, 676
+, Seattle, San Francisco, 678
+, St. Louis, Atlanta, 467
+, St. Louis, Baltimore, 730
+, St. Louis, Chicago A, 262
+, St. Louis, Chicago N, 262
+, St. Louis, Cincinnati, 308
+, St. Louis, Cleveland, 491
+, St. Louis, Dallas, 547
+, St. Louis, Denver, 794
+, St. Louis, Detroit, 454
+, St. Louis, Houston, 679
+, St. Louis, Kansas City, 237
+, St. Louis, Milwaukee, 327
+, St. Louis, Minneapolis, 466
+, St. Louis, New York A, 871
+, St. Louis, New York N, 871
+, St. Louis, Philadelphia, 808
+, St. Louis, Pittsburgh, 557
+, St. Louis, Tampa, 861
+, St. Louis, Toronto, 660
+, St. Louis, Washington DC, 708
+, Tampa, Atlanta, 416
+, Tampa, Baltimore, 851
+, Tampa, Cincinnati, 779
+, Tampa, Cleveland, 937
+, Tampa, Dallas, 916
+, Tampa, Detroit, 994
+, Tampa, Houston, 789
+, Tampa, Miami, 204
+, Tampa, Philadelphia, 927
+, Tampa, Pittsburgh, 874
+, Tampa, St. Louis, 861
+, Toronto, Atlanta, 734
+, Toronto, Baltimore, 333
+, Toronto, Boston, 429
+, Toronto, Chicago A, 468
+, Toronto, Chicago N, 468
+, Toronto, Cincinnati, 407
+, Toronto, Cleveland, 188
+, Toronto, Detroit, 206
+, Toronto, Kansas City, 846
+, Toronto, Milwaukee, 430
+, Toronto, Minneapolis, 691
+, Toronto, New York A, 341
+, Toronto, New York N, 341
+, Toronto, Philadelphia, 335
+, Toronto, Pittsburgh, 223
+, Toronto, St. Louis, 660
+, Toronto, Washington DC, 350
+, Washington DC, Atlanta, 871
+, Washington DC, Baltimore, 57
+, Washington DC, Boston, 633
+, Washington DC, Chicago A, 955
+, Washington DC, Chicago N, 955
+, Washington DC, Cincinnati, 401
+, Washington DC, Cleveland, 304
+, Washington DC, Detroit, 393
+, Washington DC, Kansas City, 940
+, Washington DC, Milwaukee, 634
+, Washington DC, Minneapolis, 931
+, Washington DC, New York A, 328
+, Washington DC, New York N, 328
+, Washington DC, Philadelphia, 199
+, Washington DC, Pittsburgh, 189
+, Washington DC, St. Louis, 708
+, Washington DC, Toronto, 350
+]
+------------------------
+Adj List for Milwaukee: Kansas City(441.0) Detroit(251.0) Chicago A(81.0) Cincinnati(324.0) Cleveland(334.0) Chicago N(81.0) Washington DC(634.0) Baltimore(641.0) Minneapolis(298.0) New York A(732.0) Atlanta(669.0) New York N(732.0) Denver(912.0) Dallas(857.0) St. Louis(327.0) Philadelphia(692.0) Toronto(430.0) Boston(855.0) Pittsburgh(445.0)
+Adj List for Detroit: Milwaukee(251.0) Kansas City(643.0) Chicago A(237.0) Cincinnati(230.0) Cleveland(90.0) Chicago N(237.0) Washington DC(393.0) Baltimore(396.0) Minneapolis(542.0) New York A(480.0) Atlanta(597.0) New York N(480.0) Dallas(999.0) St. Louis(454.0) Tampa(994.0) Philadelphia(441.0) Toronto(206.0) Boston(611.0) Pittsburgh(250.0)
+Adj List for Cincinnati: Milwaukee(324.0) Kansas City(541.0) Detroit(230.0) Chicago A(250.0) Cleveland(217.0) Miami(955.0) Chicago N(250.0) Washington DC(401.0) Baltimore(419.0) Minneapolis(604.0) New York A(567.0) Atlanta(373.0) New York N(567.0) Dallas(817.0) St. Louis(308.0) Tampa(779.0) Philadelphia(501.0) Toronto(407.0) Boston(733.0) Houston(896.0) Pittsburgh(256.0)
+Adj List for Oakland: San Francisco(8.0) San Diego(454.0) Seattle(676.0) Los Angeles A(343.0) Los Angeles N(343.0) Phoenix(645.0) Denver(938.0)
+Adj List for Cleveland: Milwaukee(334.0) Kansas City(698.0) Detroit(90.0) Chicago A(307.0) Cincinnati(217.0) Chicago N(307.0) Washington DC(304.0) Baltimore(307.0) Minneapolis(629.0) New York A(403.0) Atlanta(555.0) New York N(403.0) St. Louis(491.0) Tampa(937.0) Philadelphia(358.0) Toronto(188.0) Boston(549.0) Pittsburgh(114.0)
+Adj List for San Diego: San Francisco(458.0) Los Angeles A(111.0) Los Angeles N(111.0) Phoenix(298.0) Denver(832.0) Oakland(454.0)
+Adj List for Minneapolis: Milwaukee(298.0) Kansas City(411.0) Detroit(542.0) Chicago A(354.0) Cincinnati(604.0) Cleveland(629.0) Chicago N(354.0) Washington DC(931.0) Baltimore(937.0) Atlanta(907.0) Denver(698.0) Dallas(863.0) St. Louis(466.0) Philadelphia(983.0) Toronto(691.0) Pittsburgh(741.0)
+Adj List for Atlanta: Milwaukee(669.0) Kansas City(675.0) Detroit(597.0) Chicago A(586.0) Cincinnati(373.0) Cleveland(555.0) Miami(605.0) Chicago N(586.0) Washington DC(871.0) Baltimore(576.0) Minneapolis(907.0) New York A(745.0) New York N(745.0) Dallas(719.0) St. Louis(467.0) Tampa(416.0) Philadelphia(665.0) Toronto(734.0) Boston(935.0) Houston(700.0) Pittsburgh(521.0)
+Adj List for Los Angeles A: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Los Angeles N: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Phoenix: San Francisco(652.0) San Diego(298.0) Los Angeles A(356.0) Los Angeles N(356.0) Denver(585.0) Dallas(883.0) Oakland(645.0)
+Adj List for Denver: Milwaukee(912.0) Kansas City(557.0) Chicago A(916.0) Oakland(938.0) Chicago N(916.0) San Francisco(946.0) San Diego(832.0) Minneapolis(698.0) Los Angeles A(829.0) Los Angeles N(829.0) Phoenix(585.0) Dallas(661.0) St. Louis(794.0) Houston(877.0)
+Adj List for Dallas: Milwaukee(857.0) Kansas City(454.0) Detroit(999.0) Chicago A(801.0) Cincinnati(817.0) Chicago N(801.0) Minneapolis(863.0) Atlanta(719.0) Phoenix(883.0) Denver(661.0) St. Louis(547.0) Tampa(916.0) Houston(225.0)
+Adj List for St. Louis: Milwaukee(327.0) Kansas City(237.0) Detroit(454.0) Chicago A(262.0) Cincinnati(308.0) Cleveland(491.0) Chicago N(262.0) Washington DC(708.0) Baltimore(730.0) Minneapolis(466.0) New York A(871.0) Atlanta(467.0) New York N(871.0) Denver(794.0) Dallas(547.0) Tampa(861.0) Philadelphia(808.0) Toronto(660.0) Houston(679.0) Pittsburgh(557.0)
+Adj List for Boston: Milwaukee(855.0) Detroit(611.0) Chicago A(849.0) Cincinnati(733.0) Cleveland(549.0) Chicago N(849.0) Washington DC(633.0) Baltimore(359.0) New York A(189.0) Atlanta(935.0) New York N(189.0) Philadelphia(270.0) Toronto(429.0) Pittsburgh(481.0)
+Adj List for Pittsburgh: Milwaukee(445.0) Kansas City(779.0) Detroit(250.0) Chicago A(409.0) Cincinnati(256.0) Cleveland(114.0) Chicago N(409.0) Washington DC(189.0) Baltimore(196.0) Minneapolis(741.0) New York A(314.0) Atlanta(521.0) New York N(314.0) St. Louis(557.0) Tampa(874.0) Philadelphia(257.0) Toronto(223.0) Boston(481.0)
+Adj List for Kansas City: Milwaukee(441.0) Detroit(643.0) Chicago A(412.0) Cincinnati(541.0) Cleveland(698.0) Chicago N(412.0) Washington DC(940.0) Baltimore(960.0) Minneapolis(411.0) Atlanta(675.0) Denver(557.0) Dallas(454.0) St. Louis(237.0) Toronto(846.0) Houston(646.0) Pittsburgh(779.0)
+Adj List for Chicago A: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for Seattle: San Francisco(678.0) Los Angeles A(959.0) Los Angeles N(959.0) Oakland(676.0)
+Adj List for Miami: Baltimore(955.0) Atlanta(605.0) Cincinnati(955.0) Tampa(204.0) Houston(965.0)
+Adj List for Chicago N: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for San Francisco: San Diego(458.0) Seattle(678.0) Los Angeles A(347.0) Los Angeles N(347.0) Phoenix(652.0) Denver(946.0) Oakland(8.0)
+Adj List for Washington DC: Milwaukee(634.0) Kansas City(940.0) Detroit(393.0) Chicago A(955.0) Cincinnati(401.0) Cleveland(304.0) Chicago N(955.0) Baltimore(57.0) Minneapolis(931.0) New York A(328.0) Atlanta(871.0) New York N(328.0) St. Louis(708.0) Philadelphia(199.0) Toronto(350.0) Boston(633.0) Pittsburgh(189.0)
+Adj List for Baltimore: Milwaukee(641.0) Kansas City(960.0) Detroit(396.0) Chicago A(604.0) Cincinnati(419.0) Cleveland(307.0) Miami(955.0) Chicago N(604.0) Washington DC(57.0) Minneapolis(937.0) New York A(169.0) Atlanta(576.0) New York N(169.0) St. Louis(730.0) Tampa(851.0) Philadelphia(89.0) Toronto(333.0) Boston(359.0) Pittsburgh(196.0)
+Adj List for New York A: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for New York N: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for Tampa: Detroit(994.0) Baltimore(851.0) Atlanta(416.0) Cincinnati(779.0) Dallas(916.0) St. Louis(861.0) Cleveland(937.0) Philadelphia(927.0) Houston(789.0) Miami(204.0) Pittsburgh(874.0)
+Adj List for Philadelphia: Milwaukee(692.0) Detroit(441.0) Chicago A(664.0) Cincinnati(501.0) Cleveland(358.0) Chicago N(664.0) Washington DC(199.0) Baltimore(89.0) Minneapolis(983.0) New York A(80.0) Atlanta(665.0) New York N(80.0) St. Louis(808.0) Tampa(927.0) Toronto(335.0) Boston(270.0) Pittsburgh(257.0)
+Adj List for Toronto: Milwaukee(430.0) Kansas City(846.0) Detroit(206.0) Chicago A(468.0) Cincinnati(407.0) Cleveland(188.0) Chicago N(468.0) Washington DC(350.0) Baltimore(333.0) Minneapolis(691.0) New York A(341.0) Atlanta(734.0) New York N(341.0) St. Louis(660.0) Philadelphia(335.0) Boston(429.0) Pittsburgh(223.0)
+Adj List for Houston: Chicago N(938.0) Kansas City(646.0) Chicago A(938.0) Atlanta(700.0) Cincinnati(896.0) Denver(877.0) Dallas(225.0) St. Louis(679.0) Tampa(789.0) Miami(965.0)
+
+Showing distances to San Francisco
+Cities to avoid are [Los Angeles X, Milwaukee]
+Milwaukee 1858.0
+Detroit 2099.0
+Cincinnati 2044.0
+Oakland 8.0
+Cleveland 2169.0
+San Diego 458.0
+Minneapolis 1644.0
+Atlanta 2178.0
+Los Angeles A 347.0
+Los Angeles N 347.0
+Phoenix 652.0
+Denver 946.0
+Dallas 1535.0
+St. Louis 1740.0
+Boston 2710.0
+Pittsburgh 2271.0
+Kansas City 1503.0
+Chicago A 1862.0
+Seattle 678.0
+Miami 2655.0
+Chicago N 1862.0
+San Francisco 0.0
+Washington DC 2443.0
+Baltimore 2463.0
+New York A 2572.0
+New York N 2572.0
+Tampa 2451.0
+Philadelphia 2526.0
+Toronto 2288.0
+Houston 1760.0
+
+
+Cost of shortest path from San Francisco to Boston: 2710.0
+San Francisco -> Denver -> Chicago A -> Detroit -> Boston
+
+Cost of shortest path from San Francisco to Chicago A: 1862.0
+San Francisco -> Denver -> Chicago A
+
+Cost of shortest path from San Francisco to Chicago N: 1862.0
+San Francisco -> Denver -> Chicago N
+
+Done.
+
+
+-----------------------------------------------------
+Test file:  resources/test.txt
+
+NOTES:
+Starting City:  "A"
+Destinations: "B", "C", "D", "E", "F", "G"
+Avoiding: N/A
+
+PURPOSE OF TEST:
+to help visualize the week 10 discussion post
+
+OBSERVATION:
+Does your observation match your expected result?
+- Yes, I got the results that I used when drawing my discussion post
+Was there a suprising result?
+- No suprising results, just wanted to make sure my handdrawn answers were correct
+What do you want to furthur investigate?
+- None
+-----------------------------------------------------
+The list of cities has 12 items.
+Connections found between cities hosting Baseball games:
+[A, B, 5
+, B, C, 2
+, A, C, 3
+, C, D, 7
+, D, A, 2
+, B, G, 1
+, G, E, 1
+, B, E, 3
+, C, E, 7
+, E, D, 2
+, D, F, 6
+, E, F, 1
+]
+------------------------
+Adj List for A: B(5.0) C(3.0)
+Adj List for B: C(2.0) E(3.0) G(1.0)
+Adj List for C: D(7.0) E(7.0)
+Adj List for D: A(2.0) F(6.0)
+Adj List for E: D(2.0) F(1.0)
+Adj List for F:
+Adj List for G: E(1.0)
+
+Showing distances to A
+Cities to avoid are []
+A 0.0
+B 5.0
+C 3.0
+D 9.0
+E 7.0
+F 8.0
+G 6.0
+
+
+Cost of shortest path from A to B: 5.0
+A -> B
+
+Cost of shortest path from A to C: 3.0
+A -> C
+
+Cost of shortest path from A to D: 9.0
+A -> B -> G -> E -> D
+
+Cost of shortest path from A to E: 7.0
+A -> B -> G -> E
+
+Cost of shortest path from A to F: 8.0
+A -> B -> G -> E -> F
+
+Cost of shortest path from A to G: 6.0
+A -> B -> G
+
+Done.
+
+Process finished with exit code 0
+
+-----------------------------------------------------
+Test file:  resources/BaseballCitiesEdgeCosts.txt
+
+NOTES:
+Starting City:  "Milwaukee"
+Destinations: "Boston", "Toronto", "Pittsburgh"
+Avoiding: None
+
+PURPOSE OF TEST:
+verify that the program can use Dijkstra's algorithm correctly
+when there are no flight paths to avoid
+
+OBSERVATION:
+Does your observation match your expected result?
+- Yes I recieved the expected output, as Milwaukee has direct flights to all destinations
+Was there a suprising result?
+- No suprising results
+What do you want to furthur investigate?
+- I don't think there is anything to investigate further on this case, as Milwaukee has direct
+    flights to these destinations
+-----------------------------------------------------
+The list of cities has 414 items.
+Connections found between cities hosting Baseball games:
+[Atlanta, Baltimore, 576
+, Atlanta, Boston, 935
+, Atlanta, Chicago A, 586
+, Atlanta, Chicago N, 586
+, Atlanta, Cincinnati, 373
+, Atlanta, Cleveland, 555
+, Atlanta, Dallas, 719
+, Atlanta, Detroit, 597
+, Atlanta, Houston, 700
+, Atlanta, Kansas City, 675
+, Atlanta, Miami, 605
+, Atlanta, Milwaukee, 669
+, Atlanta, Minneapolis, 907
+, Atlanta, New York A, 745
+, Atlanta, New York N, 745
+, Atlanta, Philadelphia, 665
+, Atlanta, Pittsburgh, 521
+, Atlanta, St. Louis, 467
+, Atlanta, Tampa, 416
+, Atlanta, Toronto, 734
+, Atlanta, Washington DC, 871
+, Baltimore, Atlanta, 576
+, Baltimore, Boston, 359
+, Baltimore, Chicago A, 604
+, Baltimore, Chicago N, 604
+, Baltimore, Cincinnati, 419
+, Baltimore, Cleveland, 307
+, Baltimore, Detroit, 396
+, Baltimore, Kansas City, 960
+, Baltimore, Miami, 955
+, Baltimore, Milwaukee, 641
+, Baltimore, Minneapolis, 937
+, Baltimore, New York A, 169
+, Baltimore, New York N, 169
+, Baltimore, Philadelphia, 89
+, Baltimore, Pittsburgh, 196
+, Baltimore, St. Louis, 730
+, Baltimore, Tampa, 851
+, Baltimore, Toronto, 333
+, Baltimore, Washington DC, 57
+, Boston, Atlanta, 935
+, Boston, Baltimore, 359
+, Boston, Chicago A, 849
+, Boston, Chicago N, 849
+, Boston, Cincinnati, 733
+, Boston, Cleveland, 549
+, Boston, Detroit, 611
+, Boston, Milwaukee, 855
+, Boston, New York A, 189
+, Boston, New York N, 189
+, Boston, Philadelphia, 270
+, Boston, Pittsburgh, 481
+, Boston, Toronto, 429
+, Boston, Washington DC, 633
+, Chicago A, Atlanta, 586
+, Chicago A, Baltimore, 604
+, Chicago A, Boston, 849
+, Chicago A, Cincinnati, 250
+, Chicago A, Cleveland, 307
+, Chicago A, Dallas, 801
+, Chicago A, Denver, 916
+, Chicago A, Detroit, 237
+, Chicago A, Houston, 938
+, Chicago A, Kansas City, 412
+, Chicago A, Milwaukee, 81
+, Chicago A, Minneapolis, 354
+, Chicago A, New York A, 711
+, Chicago A, New York N, 711
+, Chicago A, Philadelphia, 664
+, Chicago A, Pittsburgh, 409
+, Chicago A, St. Louis, 262
+, Chicago A, Toronto, 468
+, Chicago A, Washington DC, 955
+, Chicago N, Atlanta, 586
+, Chicago N, Baltimore, 604
+, Chicago N, Boston, 849
+, Chicago N, Cincinnati, 250
+, Chicago N, Cleveland, 307
+, Chicago N, Dallas, 801
+, Chicago N, Denver, 916
+, Chicago N, Detroit, 237
+, Chicago N, Houston, 938
+, Chicago N, Kansas City, 412
+, Chicago N, Milwaukee, 81
+, Chicago N, Minneapolis, 354
+, Chicago N, New York A, 711
+, Chicago N, New York N, 711
+, Chicago N, Philadelphia, 664
+, Chicago N, Pittsburgh, 409
+, Chicago N, St. Louis, 262
+, Chicago N, Toronto, 468
+, Chicago N, Washington DC, 955
+, Cincinnati, Atlanta, 373
+, Cincinnati, Baltimore, 419
+, Cincinnati, Boston, 733
+, Cincinnati, Chicago A, 250
+, Cincinnati, Chicago N, 250
+, Cincinnati, Cleveland, 217
+, Cincinnati, Dallas, 817
+, Cincinnati, Detroit, 230
+, Cincinnati, Houston, 896
+, Cincinnati, Kansas City, 541
+, Cincinnati, Miami, 955
+, Cincinnati, Milwaukee, 324
+, Cincinnati, Minneapolis, 604
+, Cincinnati, New York A, 567
+, Cincinnati, New York N, 567
+, Cincinnati, Philadelphia, 501
+, Cincinnati, Pittsburgh, 256
+, Cincinnati, St. Louis, 308
+, Cincinnati, Tampa, 779
+, Cincinnati, Toronto, 407
+, Cincinnati, Washington DC, 401
+, Cleveland, Atlanta, 555
+, Cleveland, Baltimore, 307
+, Cleveland, Boston, 549
+, Cleveland, Chicago A, 307
+, Cleveland, Chicago N, 307
+, Cleveland, Cincinnati, 217
+, Cleveland, Detroit, 90
+, Cleveland, Kansas City, 698
+, Cleveland, Milwaukee, 334
+, Cleveland, Minneapolis, 629
+, Cleveland, New York A, 403
+, Cleveland, New York N, 403
+, Cleveland, Philadelphia, 358
+, Cleveland, Pittsburgh, 114
+, Cleveland, St. Louis, 491
+, Cleveland, Tampa, 937
+, Cleveland, Toronto, 188
+, Cleveland, Washington DC, 304
+, Dallas, Atlanta, 719
+, Dallas, Chicago A, 801
+, Dallas, Chicago N, 801
+, Dallas, Cincinnati, 817
+, Dallas, Denver, 661
+, Dallas, Detroit, 999
+, Dallas, Houston, 225
+, Dallas, Kansas City, 454
+, Dallas, Milwaukee, 857
+, Dallas, Minneapolis, 863
+, Dallas, Phoenix, 883
+, Dallas, St. Louis, 547
+, Dallas, Tampa, 916
+, Denver, Chicago A, 916
+, Denver, Chicago N, 916
+, Denver, Dallas, 661
+, Denver, Houston, 877
+, Denver, Kansas City, 557
+, Denver, Los Angeles A, 829
+, Denver, Los Angeles N, 829
+, Denver, Milwaukee, 912
+, Denver, Minneapolis, 698
+, Denver, Oakland, 938
+, Denver, Phoenix, 585
+, Denver, San Diego, 832
+, Denver, San Francisco, 946
+, Denver, St. Louis, 794
+, Detroit, Atlanta, 597
+, Detroit, Baltimore, 396
+, Detroit, Boston, 611
+, Detroit, Chicago A, 237
+, Detroit, Chicago N, 237
+, Detroit, Cincinnati, 230
+, Detroit, Cleveland, 90
+, Detroit, Dallas, 999
+, Detroit, Kansas City, 643
+, Detroit, Milwaukee, 251
+, Detroit, Minneapolis, 542
+, Detroit, New York A, 480
+, Detroit, New York N, 480
+, Detroit, Philadelphia, 441
+, Detroit, Pittsburgh, 250
+, Detroit, St. Louis, 454
+, Detroit, Tampa, 994
+, Detroit, Toronto, 206
+, Detroit, Washington DC, 393
+, Houston, Atlanta, 700
+, Houston, Chicago A, 938
+, Houston, Chicago N, 938
+, Houston, Cincinnati, 896
+, Houston, Dallas, 225
+, Houston, Denver, 877
+, Houston, Kansas City, 646
+, Houston, Miami, 965
+, Houston, St. Louis, 679
+, Houston, Tampa, 789
+, Kansas City, Atlanta, 675
+, Kansas City, Baltimore, 960
+, Kansas City, Chicago A, 412
+, Kansas City, Chicago N, 412
+, Kansas City, Cincinnati, 541
+, Kansas City, Cleveland, 698
+, Kansas City, Dallas, 454
+, Kansas City, Denver, 557
+, Kansas City, Detroit, 643
+, Kansas City, Houston, 646
+, Kansas City, Milwaukee, 441
+, Kansas City, Minneapolis, 411
+, Kansas City, Pittsburgh, 779
+, Kansas City, St. Louis, 237
+, Kansas City, Toronto, 846
+, Kansas City, Washington DC, 940
+, Los Angeles A, Denver, 829
+, Los Angeles A, Oakland, 343
+, Los Angeles A, Phoenix, 356
+, Los Angeles A, San Diego, 111
+, Los Angeles A, San Francisco, 347
+, Los Angeles A, Seattle, 959
+, Los Angeles N, Denver, 829
+, Los Angeles N, Oakland, 343
+, Los Angeles N, Phoenix, 356
+, Los Angeles N, San Diego, 111
+, Los Angeles N, San Francisco, 347
+, Los Angeles N, Seattle, 959
+, Miami, Atlanta, 605
+, Miami, Baltimore, 955
+, Miami, Cincinnati, 955
+, Miami, Houston, 965
+, Miami, Tampa, 204
+, Milwaukee, Atlanta, 669
+, Milwaukee, Baltimore, 641
+, Milwaukee, Boston, 855
+, Milwaukee, Chicago A, 81
+, Milwaukee, Chicago N, 81
+, Milwaukee, Cincinnati, 324
+, Milwaukee, Cleveland, 334
+, Milwaukee, Dallas, 857
+, Milwaukee, Denver, 912
+, Milwaukee, Detroit, 251
+, Milwaukee, Kansas City, 441
+, Milwaukee, Minneapolis, 298
+, Milwaukee, New York A, 732
+, Milwaukee, New York N, 732
+, Milwaukee, Philadelphia, 692
+, Milwaukee, Pittsburgh, 445
+, Milwaukee, St. Louis, 327
+, Milwaukee, Toronto, 430
+, Milwaukee, Washington DC, 634
+, Minneapolis, Atlanta, 907
+, Minneapolis, Baltimore, 937
+, Minneapolis, Chicago A, 354
+, Minneapolis, Chicago N, 354
+, Minneapolis, Cincinnati, 604
+, Minneapolis, Cleveland, 629
+, Minneapolis, Dallas, 863
+, Minneapolis, Denver, 698
+, Minneapolis, Detroit, 542
+, Minneapolis, Kansas City, 411
+, Minneapolis, Milwaukee, 298
+, Minneapolis, Philadelphia, 983
+, Minneapolis, Pittsburgh, 741
+, Minneapolis, St. Louis, 466
+, Minneapolis, Toronto, 691
+, Minneapolis, Washington DC, 931
+, New York A, Atlanta, 745
+, New York A, Baltimore, 169
+, New York A, Boston, 189
+, New York A, Chicago A, 711
+, New York A, Chicago N, 711
+, New York A, Cincinnati, 567
+, New York A, Cleveland, 403
+, New York A, Detroit, 480
+, New York A, Milwaukee, 732
+, New York A, Philadelphia, 80
+, New York A, Pittsburgh, 314
+, New York A, St. Louis, 871
+, New York A, Toronto, 341
+, New York A, Washington DC, 328
+, New York N, Atlanta, 745
+, New York N, Baltimore, 169
+, New York N, Boston, 189
+, New York N, Chicago A, 711
+, New York N, Chicago N, 711
+, New York N, Cincinnati, 567
+, New York N, Cleveland, 403
+, New York N, Detroit, 480
+, New York N, Milwaukee, 732
+, New York N, Philadelphia, 80
+, New York N, Pittsburgh, 314
+, New York N, St. Louis, 871
+, New York N, Toronto, 341
+, New York N, Washington DC, 328
+, Oakland, Denver, 938
+, Oakland, Los Angeles A, 343
+, Oakland, Los Angeles N, 343
+, Oakland, Phoenix, 645
+, Oakland, San Diego, 454
+, Oakland, San Francisco, 8
+, Oakland, Seattle, 676
+, Philadelphia, Atlanta, 665
+, Philadelphia, Baltimore, 89
+, Philadelphia, Boston, 270
+, Philadelphia, Chicago A, 664
+, Philadelphia, Chicago N, 664
+, Philadelphia, Cincinnati, 501
+, Philadelphia, Cleveland, 358
+, Philadelphia, Detroit, 441
+, Philadelphia, Milwaukee, 692
+, Philadelphia, Minneapolis, 983
+, Philadelphia, New York A, 80
+, Philadelphia, New York N, 80
+, Philadelphia, Pittsburgh, 257
+, Philadelphia, St. Louis, 808
+, Philadelphia, Tampa, 927
+, Philadelphia, Toronto, 335
+, Philadelphia, Washington DC, 199
+, Pittsburgh, Atlanta, 521
+, Pittsburgh, Baltimore, 196
+, Pittsburgh, Boston, 481
+, Pittsburgh, Chicago A, 409
+, Pittsburgh, Chicago N, 409
+, Pittsburgh, Cincinnati, 256
+, Pittsburgh, Cleveland, 114
+, Pittsburgh, Detroit, 250
+, Pittsburgh, Kansas City, 779
+, Pittsburgh, Milwaukee, 445
+, Pittsburgh, Minneapolis, 741
+, Pittsburgh, New York A, 314
+, Pittsburgh, New York N, 314
+, Pittsburgh, Philadelphia, 257
+, Pittsburgh, St. Louis, 557
+, Pittsburgh, Tampa, 874
+, Pittsburgh, Toronto, 223
+, Pittsburgh, Washington DC, 189
+, Phoenix, Dallas, 883
+, Phoenix, Denver, 585
+, Phoenix, Los Angeles A, 356
+, Phoenix, Los Angeles N, 356
+, Phoenix, Oakland, 645
+, Phoenix, San Diego, 298
+, Phoenix, San Francisco, 652
+, San Diego, Denver, 832
+, San Diego, Los Angeles A, 111
+, San Diego, Los Angeles N, 111
+, San Diego, Oakland, 454
+, San Diego, Phoenix, 298
+, San Diego, San Francisco, 458
+, San Francisco, Denver, 946
+, San Francisco, Los Angeles A, 347
+, San Francisco, Los Angeles N, 347
+, San Francisco, Oakland, 8
+, San Francisco, Phoenix, 652
+, San Francisco, San Diego, 458
+, San Francisco, Seattle, 678
+, Seattle, Los Angeles A, 959
+, Seattle, Los Angeles N, 959
+, Seattle, Oakland, 676
+, Seattle, San Francisco, 678
+, St. Louis, Atlanta, 467
+, St. Louis, Baltimore, 730
+, St. Louis, Chicago A, 262
+, St. Louis, Chicago N, 262
+, St. Louis, Cincinnati, 308
+, St. Louis, Cleveland, 491
+, St. Louis, Dallas, 547
+, St. Louis, Denver, 794
+, St. Louis, Detroit, 454
+, St. Louis, Houston, 679
+, St. Louis, Kansas City, 237
+, St. Louis, Milwaukee, 327
+, St. Louis, Minneapolis, 466
+, St. Louis, New York A, 871
+, St. Louis, New York N, 871
+, St. Louis, Philadelphia, 808
+, St. Louis, Pittsburgh, 557
+, St. Louis, Tampa, 861
+, St. Louis, Toronto, 660
+, St. Louis, Washington DC, 708
+, Tampa, Atlanta, 416
+, Tampa, Baltimore, 851
+, Tampa, Cincinnati, 779
+, Tampa, Cleveland, 937
+, Tampa, Dallas, 916
+, Tampa, Detroit, 994
+, Tampa, Houston, 789
+, Tampa, Miami, 204
+, Tampa, Philadelphia, 927
+, Tampa, Pittsburgh, 874
+, Tampa, St. Louis, 861
+, Toronto, Atlanta, 734
+, Toronto, Baltimore, 333
+, Toronto, Boston, 429
+, Toronto, Chicago A, 468
+, Toronto, Chicago N, 468
+, Toronto, Cincinnati, 407
+, Toronto, Cleveland, 188
+, Toronto, Detroit, 206
+, Toronto, Kansas City, 846
+, Toronto, Milwaukee, 430
+, Toronto, Minneapolis, 691
+, Toronto, New York A, 341
+, Toronto, New York N, 341
+, Toronto, Philadelphia, 335
+, Toronto, Pittsburgh, 223
+, Toronto, St. Louis, 660
+, Toronto, Washington DC, 350
+, Washington DC, Atlanta, 871
+, Washington DC, Baltimore, 57
+, Washington DC, Boston, 633
+, Washington DC, Chicago A, 955
+, Washington DC, Chicago N, 955
+, Washington DC, Cincinnati, 401
+, Washington DC, Cleveland, 304
+, Washington DC, Detroit, 393
+, Washington DC, Kansas City, 940
+, Washington DC, Milwaukee, 634
+, Washington DC, Minneapolis, 931
+, Washington DC, New York A, 328
+, Washington DC, New York N, 328
+, Washington DC, Philadelphia, 199
+, Washington DC, Pittsburgh, 189
+, Washington DC, St. Louis, 708
+, Washington DC, Toronto, 350
+]
+------------------------
+Adj List for Milwaukee: Kansas City(441.0) Detroit(251.0) Chicago A(81.0) Cincinnati(324.0) Cleveland(334.0) Chicago N(81.0) Washington DC(634.0) Baltimore(641.0) Minneapolis(298.0) New York A(732.0) Atlanta(669.0) New York N(732.0) Denver(912.0) Dallas(857.0) St. Louis(327.0) Philadelphia(692.0) Toronto(430.0) Boston(855.0) Pittsburgh(445.0)
+Adj List for Detroit: Milwaukee(251.0) Kansas City(643.0) Chicago A(237.0) Cincinnati(230.0) Cleveland(90.0) Chicago N(237.0) Washington DC(393.0) Baltimore(396.0) Minneapolis(542.0) New York A(480.0) Atlanta(597.0) New York N(480.0) Dallas(999.0) St. Louis(454.0) Tampa(994.0) Philadelphia(441.0) Toronto(206.0) Boston(611.0) Pittsburgh(250.0)
+Adj List for Cincinnati: Milwaukee(324.0) Kansas City(541.0) Detroit(230.0) Chicago A(250.0) Cleveland(217.0) Miami(955.0) Chicago N(250.0) Washington DC(401.0) Baltimore(419.0) Minneapolis(604.0) New York A(567.0) Atlanta(373.0) New York N(567.0) Dallas(817.0) St. Louis(308.0) Tampa(779.0) Philadelphia(501.0) Toronto(407.0) Boston(733.0) Houston(896.0) Pittsburgh(256.0)
+Adj List for Oakland: San Francisco(8.0) San Diego(454.0) Seattle(676.0) Los Angeles A(343.0) Los Angeles N(343.0) Phoenix(645.0) Denver(938.0)
+Adj List for Cleveland: Milwaukee(334.0) Kansas City(698.0) Detroit(90.0) Chicago A(307.0) Cincinnati(217.0) Chicago N(307.0) Washington DC(304.0) Baltimore(307.0) Minneapolis(629.0) New York A(403.0) Atlanta(555.0) New York N(403.0) St. Louis(491.0) Tampa(937.0) Philadelphia(358.0) Toronto(188.0) Boston(549.0) Pittsburgh(114.0)
+Adj List for San Diego: San Francisco(458.0) Los Angeles A(111.0) Los Angeles N(111.0) Phoenix(298.0) Denver(832.0) Oakland(454.0)
+Adj List for Minneapolis: Milwaukee(298.0) Kansas City(411.0) Detroit(542.0) Chicago A(354.0) Cincinnati(604.0) Cleveland(629.0) Chicago N(354.0) Washington DC(931.0) Baltimore(937.0) Atlanta(907.0) Denver(698.0) Dallas(863.0) St. Louis(466.0) Philadelphia(983.0) Toronto(691.0) Pittsburgh(741.0)
+Adj List for Atlanta: Milwaukee(669.0) Kansas City(675.0) Detroit(597.0) Chicago A(586.0) Cincinnati(373.0) Cleveland(555.0) Miami(605.0) Chicago N(586.0) Washington DC(871.0) Baltimore(576.0) Minneapolis(907.0) New York A(745.0) New York N(745.0) Dallas(719.0) St. Louis(467.0) Tampa(416.0) Philadelphia(665.0) Toronto(734.0) Boston(935.0) Houston(700.0) Pittsburgh(521.0)
+Adj List for Los Angeles A: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Los Angeles N: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Phoenix: San Francisco(652.0) San Diego(298.0) Los Angeles A(356.0) Los Angeles N(356.0) Denver(585.0) Dallas(883.0) Oakland(645.0)
+Adj List for Denver: Milwaukee(912.0) Kansas City(557.0) Chicago A(916.0) Oakland(938.0) Chicago N(916.0) San Francisco(946.0) San Diego(832.0) Minneapolis(698.0) Los Angeles A(829.0) Los Angeles N(829.0) Phoenix(585.0) Dallas(661.0) St. Louis(794.0) Houston(877.0)
+Adj List for Dallas: Milwaukee(857.0) Kansas City(454.0) Detroit(999.0) Chicago A(801.0) Cincinnati(817.0) Chicago N(801.0) Minneapolis(863.0) Atlanta(719.0) Phoenix(883.0) Denver(661.0) St. Louis(547.0) Tampa(916.0) Houston(225.0)
+Adj List for St. Louis: Milwaukee(327.0) Kansas City(237.0) Detroit(454.0) Chicago A(262.0) Cincinnati(308.0) Cleveland(491.0) Chicago N(262.0) Washington DC(708.0) Baltimore(730.0) Minneapolis(466.0) New York A(871.0) Atlanta(467.0) New York N(871.0) Denver(794.0) Dallas(547.0) Tampa(861.0) Philadelphia(808.0) Toronto(660.0) Houston(679.0) Pittsburgh(557.0)
+Adj List for Boston: Milwaukee(855.0) Detroit(611.0) Chicago A(849.0) Cincinnati(733.0) Cleveland(549.0) Chicago N(849.0) Washington DC(633.0) Baltimore(359.0) New York A(189.0) Atlanta(935.0) New York N(189.0) Philadelphia(270.0) Toronto(429.0) Pittsburgh(481.0)
+Adj List for Pittsburgh: Milwaukee(445.0) Kansas City(779.0) Detroit(250.0) Chicago A(409.0) Cincinnati(256.0) Cleveland(114.0) Chicago N(409.0) Washington DC(189.0) Baltimore(196.0) Minneapolis(741.0) New York A(314.0) Atlanta(521.0) New York N(314.0) St. Louis(557.0) Tampa(874.0) Philadelphia(257.0) Toronto(223.0) Boston(481.0)
+Adj List for Kansas City: Milwaukee(441.0) Detroit(643.0) Chicago A(412.0) Cincinnati(541.0) Cleveland(698.0) Chicago N(412.0) Washington DC(940.0) Baltimore(960.0) Minneapolis(411.0) Atlanta(675.0) Denver(557.0) Dallas(454.0) St. Louis(237.0) Toronto(846.0) Houston(646.0) Pittsburgh(779.0)
+Adj List for Chicago A: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for Seattle: San Francisco(678.0) Los Angeles A(959.0) Los Angeles N(959.0) Oakland(676.0)
+Adj List for Miami: Baltimore(955.0) Atlanta(605.0) Cincinnati(955.0) Tampa(204.0) Houston(965.0)
+Adj List for Chicago N: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for San Francisco: San Diego(458.0) Seattle(678.0) Los Angeles A(347.0) Los Angeles N(347.0) Phoenix(652.0) Denver(946.0) Oakland(8.0)
+Adj List for Washington DC: Milwaukee(634.0) Kansas City(940.0) Detroit(393.0) Chicago A(955.0) Cincinnati(401.0) Cleveland(304.0) Chicago N(955.0) Baltimore(57.0) Minneapolis(931.0) New York A(328.0) Atlanta(871.0) New York N(328.0) St. Louis(708.0) Philadelphia(199.0) Toronto(350.0) Boston(633.0) Pittsburgh(189.0)
+Adj List for Baltimore: Milwaukee(641.0) Kansas City(960.0) Detroit(396.0) Chicago A(604.0) Cincinnati(419.0) Cleveland(307.0) Miami(955.0) Chicago N(604.0) Washington DC(57.0) Minneapolis(937.0) New York A(169.0) Atlanta(576.0) New York N(169.0) St. Louis(730.0) Tampa(851.0) Philadelphia(89.0) Toronto(333.0) Boston(359.0) Pittsburgh(196.0)
+Adj List for New York A: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for New York N: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for Tampa: Detroit(994.0) Baltimore(851.0) Atlanta(416.0) Cincinnati(779.0) Dallas(916.0) St. Louis(861.0) Cleveland(937.0) Philadelphia(927.0) Houston(789.0) Miami(204.0) Pittsburgh(874.0)
+Adj List for Philadelphia: Milwaukee(692.0) Detroit(441.0) Chicago A(664.0) Cincinnati(501.0) Cleveland(358.0) Chicago N(664.0) Washington DC(199.0) Baltimore(89.0) Minneapolis(983.0) New York A(80.0) Atlanta(665.0) New York N(80.0) St. Louis(808.0) Tampa(927.0) Toronto(335.0) Boston(270.0) Pittsburgh(257.0)
+Adj List for Toronto: Milwaukee(430.0) Kansas City(846.0) Detroit(206.0) Chicago A(468.0) Cincinnati(407.0) Cleveland(188.0) Chicago N(468.0) Washington DC(350.0) Baltimore(333.0) Minneapolis(691.0) New York A(341.0) Atlanta(734.0) New York N(341.0) St. Louis(660.0) Philadelphia(335.0) Boston(429.0) Pittsburgh(223.0)
+Adj List for Houston: Chicago N(938.0) Kansas City(646.0) Chicago A(938.0) Atlanta(700.0) Cincinnati(896.0) Denver(877.0) Dallas(225.0) St. Louis(679.0) Tampa(789.0) Miami(965.0)
+
+Showing distances to Milwaukee
+Cities to avoid are []
+Milwaukee 0.0
+Detroit 251.0
+Cincinnati 324.0
+Oakland 1850.0
+Cleveland 334.0
+San Diego 1744.0
+Minneapolis 298.0
+Atlanta 667.0
+Los Angeles A 1741.0
+Los Angeles N 1741.0
+Phoenix 1497.0
+Denver 912.0
+Dallas 857.0
+St. Louis 327.0
+Boston 855.0
+Pittsburgh 445.0
+Kansas City 441.0
+Chicago A 81.0
+Seattle 2526.0
+Miami 1272.0
+Chicago N 81.0
+San Francisco 1858.0
+Washington DC 634.0
+Baltimore 641.0
+New York A 731.0
+New York N 731.0
+Tampa 1083.0
+Philadelphia 692.0
+Toronto 430.0
+Houston 1006.0
+
+
+Cost of shortest path from Milwaukee to Boston: 855.0
+Milwaukee -> Boston
+
+Cost of shortest path from Milwaukee to Toronto: 430.0
+Milwaukee -> Toronto
+
+Cost of shortest path from Milwaukee to Pittsburgh: 445.0
+Milwaukee -> Pittsburgh
+
+Done.
+
+Process finished with exit code 0
+
+
+-----------------------------------------------------
+Test file:  resources/BaseballCitiesEdgeCosts.txt
+
+NOTES:
+Starting City:  "Cleveland"
+Destinations: "Los Angeles A"
+Avoiding: "Denver", "Chicago A"
+
+PURPOSE OF TEST:
+verify that the program can use Dijkstra's algorithm correctly
+when there are flight paths to avoid
+
+Cleveland to LA A would have went through Denver and Chicago A, so this test
+verifies that it uses different paths to get to LA A
+
+OBSERVATION:
+Does your observation match your expected result?
+- Yes I recieved the expected output, as neither of the avoiding cities were in the list
+Was there a suprising result?
+- No suprising results
+What do you want to furthur investigate?
+- how many more cities can be avoided before the list is impossible?
+-----------------------------------------------------
+The list of cities has 414 items.
+------------------------
+Adj List for Milwaukee: Kansas City(441.0) Detroit(251.0) Chicago A(81.0) Cincinnati(324.0) Cleveland(334.0) Chicago N(81.0) Washington DC(634.0) Baltimore(641.0) Minneapolis(298.0) New York A(732.0) Atlanta(669.0) New York N(732.0) Denver(912.0) Dallas(857.0) St. Louis(327.0) Philadelphia(692.0) Toronto(430.0) Boston(855.0) Pittsburgh(445.0)
+Adj List for Detroit: Milwaukee(251.0) Kansas City(643.0) Chicago A(237.0) Cincinnati(230.0) Cleveland(90.0) Chicago N(237.0) Washington DC(393.0) Baltimore(396.0) Minneapolis(542.0) New York A(480.0) Atlanta(597.0) New York N(480.0) Dallas(999.0) St. Louis(454.0) Tampa(994.0) Philadelphia(441.0) Toronto(206.0) Boston(611.0) Pittsburgh(250.0)
+Adj List for Cincinnati: Milwaukee(324.0) Kansas City(541.0) Detroit(230.0) Chicago A(250.0) Cleveland(217.0) Miami(955.0) Chicago N(250.0) Washington DC(401.0) Baltimore(419.0) Minneapolis(604.0) New York A(567.0) Atlanta(373.0) New York N(567.0) Dallas(817.0) St. Louis(308.0) Tampa(779.0) Philadelphia(501.0) Toronto(407.0) Boston(733.0) Houston(896.0) Pittsburgh(256.0)
+Adj List for Oakland: San Francisco(8.0) San Diego(454.0) Seattle(676.0) Los Angeles A(343.0) Los Angeles N(343.0) Phoenix(645.0) Denver(938.0)
+Adj List for Cleveland: Milwaukee(334.0) Kansas City(698.0) Detroit(90.0) Chicago A(307.0) Cincinnati(217.0) Chicago N(307.0) Washington DC(304.0) Baltimore(307.0) Minneapolis(629.0) New York A(403.0) Atlanta(555.0) New York N(403.0) St. Louis(491.0) Tampa(937.0) Philadelphia(358.0) Toronto(188.0) Boston(549.0) Pittsburgh(114.0)
+Adj List for San Diego: San Francisco(458.0) Los Angeles A(111.0) Los Angeles N(111.0) Phoenix(298.0) Denver(832.0) Oakland(454.0)
+Adj List for Minneapolis: Milwaukee(298.0) Kansas City(411.0) Detroit(542.0) Chicago A(354.0) Cincinnati(604.0) Cleveland(629.0) Chicago N(354.0) Washington DC(931.0) Baltimore(937.0) Atlanta(907.0) Denver(698.0) Dallas(863.0) St. Louis(466.0) Philadelphia(983.0) Toronto(691.0) Pittsburgh(741.0)
+Adj List for Atlanta: Milwaukee(669.0) Kansas City(675.0) Detroit(597.0) Chicago A(586.0) Cincinnati(373.0) Cleveland(555.0) Miami(605.0) Chicago N(586.0) Washington DC(871.0) Baltimore(576.0) Minneapolis(907.0) New York A(745.0) New York N(745.0) Dallas(719.0) St. Louis(467.0) Tampa(416.0) Philadelphia(665.0) Toronto(734.0) Boston(935.0) Houston(700.0) Pittsburgh(521.0)
+Adj List for Los Angeles A: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Los Angeles N: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Phoenix: San Francisco(652.0) San Diego(298.0) Los Angeles A(356.0) Los Angeles N(356.0) Denver(585.0) Dallas(883.0) Oakland(645.0)
+Adj List for Denver: Milwaukee(912.0) Kansas City(557.0) Chicago A(916.0) Oakland(938.0) Chicago N(916.0) San Francisco(946.0) San Diego(832.0) Minneapolis(698.0) Los Angeles A(829.0) Los Angeles N(829.0) Phoenix(585.0) Dallas(661.0) St. Louis(794.0) Houston(877.0)
+Adj List for Dallas: Milwaukee(857.0) Kansas City(454.0) Detroit(999.0) Chicago A(801.0) Cincinnati(817.0) Chicago N(801.0) Minneapolis(863.0) Atlanta(719.0) Phoenix(883.0) Denver(661.0) St. Louis(547.0) Tampa(916.0) Houston(225.0)
+Adj List for St. Louis: Milwaukee(327.0) Kansas City(237.0) Detroit(454.0) Chicago A(262.0) Cincinnati(308.0) Cleveland(491.0) Chicago N(262.0) Washington DC(708.0) Baltimore(730.0) Minneapolis(466.0) New York A(871.0) Atlanta(467.0) New York N(871.0) Denver(794.0) Dallas(547.0) Tampa(861.0) Philadelphia(808.0) Toronto(660.0) Houston(679.0) Pittsburgh(557.0)
+Adj List for Boston: Milwaukee(855.0) Detroit(611.0) Chicago A(849.0) Cincinnati(733.0) Cleveland(549.0) Chicago N(849.0) Washington DC(633.0) Baltimore(359.0) New York A(189.0) Atlanta(935.0) New York N(189.0) Philadelphia(270.0) Toronto(429.0) Pittsburgh(481.0)
+Adj List for Pittsburgh: Milwaukee(445.0) Kansas City(779.0) Detroit(250.0) Chicago A(409.0) Cincinnati(256.0) Cleveland(114.0) Chicago N(409.0) Washington DC(189.0) Baltimore(196.0) Minneapolis(741.0) New York A(314.0) Atlanta(521.0) New York N(314.0) St. Louis(557.0) Tampa(874.0) Philadelphia(257.0) Toronto(223.0) Boston(481.0)
+Adj List for Kansas City: Milwaukee(441.0) Detroit(643.0) Chicago A(412.0) Cincinnati(541.0) Cleveland(698.0) Chicago N(412.0) Washington DC(940.0) Baltimore(960.0) Minneapolis(411.0) Atlanta(675.0) Denver(557.0) Dallas(454.0) St. Louis(237.0) Toronto(846.0) Houston(646.0) Pittsburgh(779.0)
+Adj List for Chicago A: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for Seattle: San Francisco(678.0) Los Angeles A(959.0) Los Angeles N(959.0) Oakland(676.0)
+Adj List for Miami: Baltimore(955.0) Atlanta(605.0) Cincinnati(955.0) Tampa(204.0) Houston(965.0)
+Adj List for Chicago N: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for San Francisco: San Diego(458.0) Seattle(678.0) Los Angeles A(347.0) Los Angeles N(347.0) Phoenix(652.0) Denver(946.0) Oakland(8.0)
+Adj List for Washington DC: Milwaukee(634.0) Kansas City(940.0) Detroit(393.0) Chicago A(955.0) Cincinnati(401.0) Cleveland(304.0) Chicago N(955.0) Baltimore(57.0) Minneapolis(931.0) New York A(328.0) Atlanta(871.0) New York N(328.0) St. Louis(708.0) Philadelphia(199.0) Toronto(350.0) Boston(633.0) Pittsburgh(189.0)
+Adj List for Baltimore: Milwaukee(641.0) Kansas City(960.0) Detroit(396.0) Chicago A(604.0) Cincinnati(419.0) Cleveland(307.0) Miami(955.0) Chicago N(604.0) Washington DC(57.0) Minneapolis(937.0) New York A(169.0) Atlanta(576.0) New York N(169.0) St. Louis(730.0) Tampa(851.0) Philadelphia(89.0) Toronto(333.0) Boston(359.0) Pittsburgh(196.0)
+Adj List for New York A: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for New York N: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for Tampa: Detroit(994.0) Baltimore(851.0) Atlanta(416.0) Cincinnati(779.0) Dallas(916.0) St. Louis(861.0) Cleveland(937.0) Philadelphia(927.0) Houston(789.0) Miami(204.0) Pittsburgh(874.0)
+Adj List for Philadelphia: Milwaukee(692.0) Detroit(441.0) Chicago A(664.0) Cincinnati(501.0) Cleveland(358.0) Chicago N(664.0) Washington DC(199.0) Baltimore(89.0) Minneapolis(983.0) New York A(80.0) Atlanta(665.0) New York N(80.0) St. Louis(808.0) Tampa(927.0) Toronto(335.0) Boston(270.0) Pittsburgh(257.0)
+Adj List for Toronto: Milwaukee(430.0) Kansas City(846.0) Detroit(206.0) Chicago A(468.0) Cincinnati(407.0) Cleveland(188.0) Chicago N(468.0) Washington DC(350.0) Baltimore(333.0) Minneapolis(691.0) New York A(341.0) Atlanta(734.0) New York N(341.0) St. Louis(660.0) Philadelphia(335.0) Boston(429.0) Pittsburgh(223.0)
+Adj List for Houston: Chicago N(938.0) Kansas City(646.0) Chicago A(938.0) Atlanta(700.0) Cincinnati(896.0) Denver(877.0) Dallas(225.0) St. Louis(679.0) Tampa(789.0) Miami(965.0)
+
+Showing distances to Cleveland
+Cities to avoid are [Denver, Chicago A]
+Milwaukee 334.0
+Detroit 90.0
+Cincinnati 217.0
+Oakland 2562.0
+Cleveland 0.0
+San Diego 2215.0
+Minneapolis 629.0
+Atlanta 555.0
+Los Angeles A 2273.0
+Los Angeles N 2273.0
+Phoenix 1917.0
+Denver 1.7976931348623157E308
+Dallas 1034.0
+St. Louis 491.0
+Boston 549.0
+Pittsburgh 114.0
+Kansas City 698.0
+Chicago A 1.7976931348623157E308
+Seattle 3232.0
+Miami 1141.0
+Chicago N 307.0
+San Francisco 2569.0
+Washington DC 303.0
+Baltimore 307.0
+New York A 403.0
+New York N 403.0
+Tampa 937.0
+Philadelphia 358.0
+Toronto 188.0
+Houston 1113.0
+
+
+Cost of shortest path from Cleveland to Los Angeles A: 2273.0
+Cleveland -> Cincinnati -> Dallas -> Phoenix -> Los Angeles A
+
+Done.
+
+-----------------------------------------------------
+Test file:  resources/BaseballCitiesEdgeCosts.txt
+
+NOTES:
+Starting City:  "Phoenix"
+Destinations: "Philadelphia", "Baltimore"
+Avoiding: "Denver", "Chicago A", "Kansas City", "Dallas", "Cincinnati"
+
+PURPOSE OF TEST:
+Verify that removing multiple key flight paths results in "No path exists"
+
+OBSERVATION:
+Does your observation match your expected result?
+- Yes I recieved the expected output
+Was there a suprising result?
+- No suprising results, though the distance numbers when showing distances was weird "1.7976931348623157E308"
+What do you want to furthur investigate?
+- Why are the numbersthat large? "1.7976931348623157E308"?
+-----------------------------------------------------
+The list of cities has 414 items.
+------------------------
+Adj List for Milwaukee: Kansas City(441.0) Detroit(251.0) Chicago A(81.0) Cincinnati(324.0) Cleveland(334.0) Chicago N(81.0) Washington DC(634.0) Baltimore(641.0) Minneapolis(298.0) New York A(732.0) Atlanta(669.0) New York N(732.0) Denver(912.0) Dallas(857.0) St. Louis(327.0) Philadelphia(692.0) Toronto(430.0) Boston(855.0) Pittsburgh(445.0)
+Adj List for Detroit: Milwaukee(251.0) Kansas City(643.0) Chicago A(237.0) Cincinnati(230.0) Cleveland(90.0) Chicago N(237.0) Washington DC(393.0) Baltimore(396.0) Minneapolis(542.0) New York A(480.0) Atlanta(597.0) New York N(480.0) Dallas(999.0) St. Louis(454.0) Tampa(994.0) Philadelphia(441.0) Toronto(206.0) Boston(611.0) Pittsburgh(250.0)
+Adj List for Cincinnati: Milwaukee(324.0) Kansas City(541.0) Detroit(230.0) Chicago A(250.0) Cleveland(217.0) Miami(955.0) Chicago N(250.0) Washington DC(401.0) Baltimore(419.0) Minneapolis(604.0) New York A(567.0) Atlanta(373.0) New York N(567.0) Dallas(817.0) St. Louis(308.0) Tampa(779.0) Philadelphia(501.0) Toronto(407.0) Boston(733.0) Houston(896.0) Pittsburgh(256.0)
+Adj List for Oakland: San Francisco(8.0) San Diego(454.0) Seattle(676.0) Los Angeles A(343.0) Los Angeles N(343.0) Phoenix(645.0) Denver(938.0)
+Adj List for Cleveland: Milwaukee(334.0) Kansas City(698.0) Detroit(90.0) Chicago A(307.0) Cincinnati(217.0) Chicago N(307.0) Washington DC(304.0) Baltimore(307.0) Minneapolis(629.0) New York A(403.0) Atlanta(555.0) New York N(403.0) St. Louis(491.0) Tampa(937.0) Philadelphia(358.0) Toronto(188.0) Boston(549.0) Pittsburgh(114.0)
+Adj List for San Diego: San Francisco(458.0) Los Angeles A(111.0) Los Angeles N(111.0) Phoenix(298.0) Denver(832.0) Oakland(454.0)
+Adj List for Minneapolis: Milwaukee(298.0) Kansas City(411.0) Detroit(542.0) Chicago A(354.0) Cincinnati(604.0) Cleveland(629.0) Chicago N(354.0) Washington DC(931.0) Baltimore(937.0) Atlanta(907.0) Denver(698.0) Dallas(863.0) St. Louis(466.0) Philadelphia(983.0) Toronto(691.0) Pittsburgh(741.0)
+Adj List for Atlanta: Milwaukee(669.0) Kansas City(675.0) Detroit(597.0) Chicago A(586.0) Cincinnati(373.0) Cleveland(555.0) Miami(605.0) Chicago N(586.0) Washington DC(871.0) Baltimore(576.0) Minneapolis(907.0) New York A(745.0) New York N(745.0) Dallas(719.0) St. Louis(467.0) Tampa(416.0) Philadelphia(665.0) Toronto(734.0) Boston(935.0) Houston(700.0) Pittsburgh(521.0)
+Adj List for Los Angeles A: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Los Angeles N: San Francisco(347.0) San Diego(111.0) Seattle(959.0) Phoenix(356.0) Denver(829.0) Oakland(343.0)
+Adj List for Phoenix: San Francisco(652.0) San Diego(298.0) Los Angeles A(356.0) Los Angeles N(356.0) Denver(585.0) Dallas(883.0) Oakland(645.0)
+Adj List for Denver: Milwaukee(912.0) Kansas City(557.0) Chicago A(916.0) Oakland(938.0) Chicago N(916.0) San Francisco(946.0) San Diego(832.0) Minneapolis(698.0) Los Angeles A(829.0) Los Angeles N(829.0) Phoenix(585.0) Dallas(661.0) St. Louis(794.0) Houston(877.0)
+Adj List for Dallas: Milwaukee(857.0) Kansas City(454.0) Detroit(999.0) Chicago A(801.0) Cincinnati(817.0) Chicago N(801.0) Minneapolis(863.0) Atlanta(719.0) Phoenix(883.0) Denver(661.0) St. Louis(547.0) Tampa(916.0) Houston(225.0)
+Adj List for St. Louis: Milwaukee(327.0) Kansas City(237.0) Detroit(454.0) Chicago A(262.0) Cincinnati(308.0) Cleveland(491.0) Chicago N(262.0) Washington DC(708.0) Baltimore(730.0) Minneapolis(466.0) New York A(871.0) Atlanta(467.0) New York N(871.0) Denver(794.0) Dallas(547.0) Tampa(861.0) Philadelphia(808.0) Toronto(660.0) Houston(679.0) Pittsburgh(557.0)
+Adj List for Boston: Milwaukee(855.0) Detroit(611.0) Chicago A(849.0) Cincinnati(733.0) Cleveland(549.0) Chicago N(849.0) Washington DC(633.0) Baltimore(359.0) New York A(189.0) Atlanta(935.0) New York N(189.0) Philadelphia(270.0) Toronto(429.0) Pittsburgh(481.0)
+Adj List for Pittsburgh: Milwaukee(445.0) Kansas City(779.0) Detroit(250.0) Chicago A(409.0) Cincinnati(256.0) Cleveland(114.0) Chicago N(409.0) Washington DC(189.0) Baltimore(196.0) Minneapolis(741.0) New York A(314.0) Atlanta(521.0) New York N(314.0) St. Louis(557.0) Tampa(874.0) Philadelphia(257.0) Toronto(223.0) Boston(481.0)
+Adj List for Kansas City: Milwaukee(441.0) Detroit(643.0) Chicago A(412.0) Cincinnati(541.0) Cleveland(698.0) Chicago N(412.0) Washington DC(940.0) Baltimore(960.0) Minneapolis(411.0) Atlanta(675.0) Denver(557.0) Dallas(454.0) St. Louis(237.0) Toronto(846.0) Houston(646.0) Pittsburgh(779.0)
+Adj List for Chicago A: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for Seattle: San Francisco(678.0) Los Angeles A(959.0) Los Angeles N(959.0) Oakland(676.0)
+Adj List for Miami: Baltimore(955.0) Atlanta(605.0) Cincinnati(955.0) Tampa(204.0) Houston(965.0)
+Adj List for Chicago N: Milwaukee(81.0) Kansas City(412.0) Detroit(237.0) Cincinnati(250.0) Cleveland(307.0) Washington DC(955.0) Baltimore(604.0) Minneapolis(354.0) New York A(711.0) Atlanta(586.0) New York N(711.0) Denver(916.0) Dallas(801.0) St. Louis(262.0) Philadelphia(664.0) Toronto(468.0) Boston(849.0) Houston(938.0) Pittsburgh(409.0)
+Adj List for San Francisco: San Diego(458.0) Seattle(678.0) Los Angeles A(347.0) Los Angeles N(347.0) Phoenix(652.0) Denver(946.0) Oakland(8.0)
+Adj List for Washington DC: Milwaukee(634.0) Kansas City(940.0) Detroit(393.0) Chicago A(955.0) Cincinnati(401.0) Cleveland(304.0) Chicago N(955.0) Baltimore(57.0) Minneapolis(931.0) New York A(328.0) Atlanta(871.0) New York N(328.0) St. Louis(708.0) Philadelphia(199.0) Toronto(350.0) Boston(633.0) Pittsburgh(189.0)
+Adj List for Baltimore: Milwaukee(641.0) Kansas City(960.0) Detroit(396.0) Chicago A(604.0) Cincinnati(419.0) Cleveland(307.0) Miami(955.0) Chicago N(604.0) Washington DC(57.0) Minneapolis(937.0) New York A(169.0) Atlanta(576.0) New York N(169.0) St. Louis(730.0) Tampa(851.0) Philadelphia(89.0) Toronto(333.0) Boston(359.0) Pittsburgh(196.0)
+Adj List for New York A: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for New York N: Milwaukee(732.0) Detroit(480.0) Chicago A(711.0) Cincinnati(567.0) Cleveland(403.0) Chicago N(711.0) Washington DC(328.0) Baltimore(169.0) Atlanta(745.0) St. Louis(871.0) Philadelphia(80.0) Toronto(341.0) Boston(189.0) Pittsburgh(314.0)
+Adj List for Tampa: Detroit(994.0) Baltimore(851.0) Atlanta(416.0) Cincinnati(779.0) Dallas(916.0) St. Louis(861.0) Cleveland(937.0) Philadelphia(927.0) Houston(789.0) Miami(204.0) Pittsburgh(874.0)
+Adj List for Philadelphia: Milwaukee(692.0) Detroit(441.0) Chicago A(664.0) Cincinnati(501.0) Cleveland(358.0) Chicago N(664.0) Washington DC(199.0) Baltimore(89.0) Minneapolis(983.0) New York A(80.0) Atlanta(665.0) New York N(80.0) St. Louis(808.0) Tampa(927.0) Toronto(335.0) Boston(270.0) Pittsburgh(257.0)
+Adj List for Toronto: Milwaukee(430.0) Kansas City(846.0) Detroit(206.0) Chicago A(468.0) Cincinnati(407.0) Cleveland(188.0) Chicago N(468.0) Washington DC(350.0) Baltimore(333.0) Minneapolis(691.0) New York A(341.0) Atlanta(734.0) New York N(341.0) St. Louis(660.0) Philadelphia(335.0) Boston(429.0) Pittsburgh(223.0)
+Adj List for Houston: Chicago N(938.0) Kansas City(646.0) Chicago A(938.0) Atlanta(700.0) Cincinnati(896.0) Denver(877.0) Dallas(225.0) St. Louis(679.0) Tampa(789.0) Miami(965.0)
+
+Showing distances to Phoenix
+Cities to avoid are [Denver, Chicago A, Kansas City, Dallas, Cincinnati]
+Milwaukee 1.7976931348623157E308
+Detroit 1.7976931348623157E308
+Cincinnati 1.7976931348623157E308
+Oakland 645.0
+Cleveland 1.7976931348623157E308
+San Diego 298.0
+Minneapolis 1.7976931348623157E308
+Atlanta 1.7976931348623157E308
+Los Angeles A 356.0
+Los Angeles N 356.0
+Phoenix 0.0
+Denver 1.7976931348623157E308
+Dallas 1.7976931348623157E308
+St. Louis 1.7976931348623157E308
+Boston 1.7976931348623157E308
+Pittsburgh 1.7976931348623157E308
+Kansas City 1.7976931348623157E308
+Chicago A 1.7976931348623157E308
+Seattle 1315.0
+Miami 1.7976931348623157E308
+Chicago N 1.7976931348623157E308
+San Francisco 652.0
+Washington DC 1.7976931348623157E308
+Baltimore 1.7976931348623157E308
+New York A 1.7976931348623157E308
+New York N 1.7976931348623157E308
+Tampa 1.7976931348623157E308
+Philadelphia 1.7976931348623157E308
+Toronto 1.7976931348623157E308
+Houston 1.7976931348623157E308
+
+
+No path exists.
+
+No path exists.
+
+Done.

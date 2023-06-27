@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Programming Assignment 7 Results</title>
+</head>
+<body class="min-h-screen w-full md:w-3/4 mx-auto flex flex-col bg-blue-100">
+  <a href="#topRef" class="fixed bottom-0 right-0 rounded-full bg-blue-400 hover:bg-blue-300 border-2 border-transparent hover:border-black text-white text-2xl w-12 h-12 m-4 z-50">
+    <p class="text-center">^</p>
+    <span class="sr-only">To Top</span>
+  </a>
+  <div id="topRef" class="flex p-4 content-center items-center justify-center gap-4">
+    <a class="hover:border-b-black border-transparent border-b-2 font-bold" href="index.html">Home</a>
+    <a class="border-b-black border-transparent border-b-2 font-bold" href="results.html">Results</a>
+  </div>
+  <div class="flex p-4 content-center items-center justify-center gap-4 sticky top-0 z-999">
+    <a class="flex-grow text-center bg-blue-300 p-2 hover:border-b-black border-transparent border-b-2 font-bold" href="#findings">Findings</a>
+    <a class="flex-grow text-center bg-blue-300 p-2 hover:border-b-black border-transparent border-b-2 font-bold" href="#interesting-finds">Interesting Find</a>
+  </div>
+  <div id="outerDiv" class="flex flex-col flex-grow content-center items-center justify-center">
+    <div class="flex flex-col p-2 w-full">
+      <h1 id="findings" class="text-2xl font-bold underline p-2">Findings</h1>
+      <ul class="pl-8 list-decimal">
+        <li>From each iteration of the chart, and the combination of all the tests we can see that as the array size gets larger, the average time it takes to completely sort also increases</li>
+        <li>While it is harder to see on the All chart, we can see really clearly on the hundred thousands chart how the chart expands over each increment.</li>
+        <li>One oberservation can be made that seems almost random is how sometimes an increment can shoot up in time, then lower back down to a normal time. This can really be seen on the 800,000 chart where it starts about where 700,000 ends, then shoots up around increment 50, 100, and again at around 250.</li>
+        <li>When looking at all the charts we can see some flat ranges, from 1,000,000 and 100,000, though for the smallest amount (20,000) it fluctuates more from 2-5 milliseconds</li>
+      </ul>
+    </div>
+    <div class="flex flex-col p-2">
+      <figure>
+        <img src="resources/recursion-limit-all.jpeg" alt="Recursion Limit All" />
+        <figcaption>Recursion Limit All</figcaption>
+      </figure>
+    </div>
+    <div class="flex flex-col p-2">
+      <figure>
+        <img src="resources/recursion-limit-ten-thousands.jpeg" alt="Recursion Limit subset of ten thousands" />
+        <figcaption>Recursion Limit Subset of Ten Thousands</figcaption>
+      </figure>
+    </div>
+    <div class="flex flex-col p-2">
+      <figure>
+        <img src="resources/recursion-limit-hundred-thousands.jpeg" alt="Recursion Limit subset of hundred thousands" />
+        <figcaption>Recursion Limit Subset of Hundred Thousands</figcaption>
+      </figure>
+    </div>
+    <div class="flex flex-col p-2">
+      <figure>
+        <img src="resources/recursion-limit-millions.jpeg" alt="Recursion Limit subset of millions plus 10 million" />
+        <figcaption>Recursion Limit Subset of Millions</figcaption>
+      </figure>
+    </div>
+    <div class="flex flex-col p-2 w-full">
+      <h1 id="interesting-finds" class="text-2xl font-bold underline p-2">Interesting Find</h1>
+      <ul class="pl-8 list-decimal">
+        <li>Some classmates were discussing the values that should be in the array, and some were saying that they were using values from 1-100. I went and ran my tests again with values 1-100 instead of Integer.MAX_VALUE and the results where interesting</li>
+        <li>with these results we can see that the average time is much lower, almost 4000 milliseconds in total lower</li>
+        <li>we can also see how each line starts at a higher number and goes down to a lower number, compared to previously where we were going lower to higher</li>
+      </ul>
+    </div>
+    <div class="flex flex-col p-2">
+      <figure>
+        <img src="resources/recursion-limit-all-under-hundred.jpeg" alt="Recursion Limit All" />
+        <figcaption>Recursion Limit All - values from 1-100</figcaption>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>

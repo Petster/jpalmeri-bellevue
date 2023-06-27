@@ -1,0 +1,2283 @@
+-----------------------------------------------------
+---------------------Super Market--------------------
+-----------------------------------------------------
+Test file: resources/inventory_log.txt
+
+NOTES: basic test of the functionality
+-----------------------------------------------------
+Test file: resources/inventory_log.txt
+
+
+Update at line #1: add milk
+"hard" number of unique items (i.e. mSizeHard) = 1
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+milk:1
+
+Testing traversing "soft" inventory:
+milk:1
+
+
+at line #1: add milk
+First item: milk:1
+Last item: milk:1
+
+
+Update at line #2: add milk
+"hard" number of unique items (i.e. mSizeHard) = 1
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+milk:2
+
+Testing traversing "soft" inventory:
+milk:2
+
+
+at line #2: add milk
+First item: milk:2
+Last item: milk:2
+
+
+Update at line #3: add soup
+"hard" number of unique items (i.e. mSizeHard) = 2
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+milk:2 soup:1
+
+Testing traversing "soft" inventory:
+milk:2 soup:1
+
+
+at line #3: add soup
+First item: milk:2
+Last item: soup:1
+
+
+Update at line #4: add soup
+"hard" number of unique items (i.e. mSizeHard) = 2
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+milk:2 soup:2
+
+Testing traversing "soft" inventory:
+milk:2 soup:2
+
+
+at line #4: add soup
+First item: milk:2
+Last item: soup:2
+
+
+Update at line #5: add apples
+"hard" number of unique items (i.e. mSizeHard) = 3
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+apples:1 milk:2 soup:2
+
+Testing traversing "soft" inventory:
+apples:1 milk:2 soup:2
+
+
+at line #5: add apples
+First item: apples:1
+Last item: soup:2
+
+
+Update at line #6: add tomato
+"hard" number of unique items (i.e. mSizeHard) = 4
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+apples:1 milk:2 soup:2 tomato:1
+
+Testing traversing "soft" inventory:
+apples:1 milk:2 soup:2 tomato:1
+
+
+at line #6: add tomato
+First item: apples:1
+Last item: tomato:1
+
+
+Update at line #7: add avocado
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 milk:2 soup:2 tomato:1
+
+Testing traversing "soft" inventory:
+apples:1 avocado:1 milk:2 soup:2 tomato:1
+
+
+at line #7: add avocado
+First item: apples:1
+Last item: tomato:1
+
+
+Update at line #8: add eggplant
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 eggplant:1 milk:2 soup:2 tomato:1
+
+Testing traversing "soft" inventory:
+apples:1 avocado:1 eggplant:1 milk:2 soup:2 tomato:1
+
+
+at line #8: add eggplant
+First item: apples:1
+Last item: tomato:1
+
+
+Update at line #9: add tomato
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 eggplant:1 milk:2 soup:2 tomato:2
+
+Testing traversing "soft" inventory:
+apples:1 avocado:1 eggplant:1 milk:2 soup:2 tomato:2
+
+
+at line #9: add tomato
+First item: apples:1
+Last item: tomato:2
+
+
+Update at line #10: add onion
+"hard" number of unique items (i.e. mSizeHard) = 7
+"soft" number of unique items (i.e. mSize) = 7
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+Testing traversing "soft" inventory:
+apples:1 avocado:1 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+
+at line #10: add onion
+First item: apples:1
+Last item: tomato:2
+
+
+Update at line #11: add beans
+"hard" number of unique items (i.e. mSizeHard) = 8
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 beans:1 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+Testing traversing "soft" inventory:
+apples:1 avocado:1 beans:1 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+
+at line #11: add beans
+First item: apples:1
+Last item: tomato:2
+
+
+Update at line #12: add beans
+"hard" number of unique items (i.e. mSizeHard) = 8
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 beans:2 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+Testing traversing "soft" inventory:
+apples:1 avocado:1 beans:2 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+
+at line #12: add beans
+First item: apples:1
+Last item: tomato:2
+
+
+Update at line #13: buy apples
+"hard" number of unique items (i.e. mSizeHard) = 8
+"soft" number of unique items (i.e. mSize) = 7
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 eggplant:1 milk:2 onion:1 soup:2 tomato:2
+
+
+at line #13: buy apples
+First item: avocado:1
+Last item: tomato:2
+
+Warning: Unable to fulfill request: at line #14: buy fish
+Warning: Item fish is out of stock.
+
+at line #14: buy fish
+First item: avocado:1
+Last item: tomato:2
+
+
+Update at line #15: add pie
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 eggplant:1 milk:2 onion:1 pie:1 soup:2 tomato:2
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 eggplant:1 milk:2 onion:1 pie:1 soup:2 tomato:2
+
+
+at line #15: add pie
+First item: avocado:1
+Last item: tomato:2
+
+
+Update at line #16: add tomato
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 eggplant:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 eggplant:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+
+at line #16: add tomato
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #17: add cake
+"hard" number of unique items (i.e. mSizeHard) = 10
+"soft" number of unique items (i.e. mSize) = 9
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 eggplant:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 eggplant:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+
+at line #17: add cake
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #18: add fish
+"hard" number of unique items (i.e. mSizeHard) = 11
+"soft" number of unique items (i.e. mSize) = 10
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+
+at line #18: add fish
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #19: add chicken
+"hard" number of unique items (i.e. mSizeHard) = 12
+"soft" number of unique items (i.e. mSize) = 11
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 chicken:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 chicken:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+
+at line #19: add chicken
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #20: add cereal
+"hard" number of unique items (i.e. mSizeHard) = 13
+"soft" number of unique items (i.e. mSize) = 12
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+
+at line #20: add cereal
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #21: add cookies
+"hard" number of unique items (i.e. mSizeHard) = 14
+"soft" number of unique items (i.e. mSize) = 13
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:1 eggplant:1 fish:1 milk:2 onion:1 pie:1 soup:2 tomato:3
+
+
+at line #21: add cookies
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #22: buy onion
+"hard" number of unique items (i.e. mSizeHard) = 14
+"soft" number of unique items (i.e. mSize) = 12
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:1 eggplant:1 fish:1 milk:2 onion:0 pie:1 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:1 eggplant:1 fish:1 milk:2 pie:1 soup:2 tomato:3
+
+
+at line #22: buy onion
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #23: buy pie
+"hard" number of unique items (i.e. mSizeHard) = 14
+"soft" number of unique items (i.e. mSize) = 11
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:1 eggplant:1 fish:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:1 eggplant:1 fish:1 milk:2 soup:2 tomato:3
+
+
+at line #23: buy pie
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #24: buy cookies
+"hard" number of unique items (i.e. mSizeHard) = 14
+"soft" number of unique items (i.e. mSize) = 10
+
+Testing traversing "hard" inventory:
+apples:0 avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 milk:2 soup:2 tomato:3
+
+
+at line #24: buy cookies
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #25: add apples
+"hard" number of unique items (i.e. mSizeHard) = 14
+"soft" number of unique items (i.e. mSize) = 10
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 beans:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 milk:2 soup:2 tomato:3
+
+
+at line #25: add apples
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #26: add basil
+"hard" number of unique items (i.e. mSizeHard) = 15
+"soft" number of unique items (i.e. mSize) = 11
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 milk:2 soup:2 tomato:3
+
+
+at line #26: add basil
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #27: add juice
+"hard" number of unique items (i.e. mSizeHard) = 16
+"soft" number of unique items (i.e. mSize) = 12
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 juice:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 juice:1 milk:2 soup:2 tomato:3
+
+
+at line #27: add juice
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #28: add juice
+"hard" number of unique items (i.e. mSizeHard) = 16
+"soft" number of unique items (i.e. mSize) = 12
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 juice:2 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 juice:2 milk:2 soup:2 tomato:3
+
+
+at line #28: add juice
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #29: add bread
+"hard" number of unique items (i.e. mSizeHard) = 17
+"soft" number of unique items (i.e. mSize) = 13
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 juice:2 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 juice:2 milk:2 soup:2 tomato:3
+
+
+at line #29: add bread
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #30: add meat
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:1 chicken:1 cookies:0 eggplant:1 fish:1 juice:2 meat:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:1 chicken:1 eggplant:1 fish:1 juice:2 meat:1 milk:2 soup:2 tomato:3
+
+
+at line #30: add meat
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #31: add eggplant
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 meat:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 meat:1 milk:2 soup:2 tomato:3
+
+
+at line #31: add eggplant
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #32: add bread
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 meat:1 milk:2 onion:0 pie:0 soup:2 tomato:3
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 meat:1 milk:2 soup:2 tomato:3
+
+
+at line #32: add bread
+First item: avocado:1
+Last item: tomato:3
+
+
+Update at line #33: add tomato
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 meat:1 milk:2 onion:0 pie:0 soup:2 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 meat:1 milk:2 soup:2 tomato:4
+
+
+at line #33: add tomato
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #34: buy meat
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 13
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 meat:0 milk:2 onion:0 pie:0 soup:2 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 milk:2 soup:2 tomato:4
+
+
+at line #34: buy meat
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #35: add soup
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 13
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 meat:0 milk:2 onion:0 pie:0 soup:3 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 milk:2 soup:3 tomato:4
+
+
+at line #35: add soup
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #36: add spaghetti
+"hard" number of unique items (i.e. mSizeHard) = 19
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 meat:0 milk:2 onion:0 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #36: add spaghetti
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #37: add linguine
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 linguine:1 meat:0 milk:2 onion:0 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #37: add linguine
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #38: add onion
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:1 chicken:1 eggplant:2 fish:1 juice:2 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #38: add onion
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #39: add cereal
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:2 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:2 chicken:1 eggplant:2 fish:1 juice:2 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #39: add cereal
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #40: add milk
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:2 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 linguine:1 meat:0 milk:3 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:2 chicken:1 eggplant:2 fish:1 juice:2 linguine:1 milk:3 soup:3 spaghetti:1 tomato:4
+
+
+at line #40: add milk
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #41: buy milk
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:2 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:2 cake:1 cereal:2 chicken:1 eggplant:2 fish:1 juice:2 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #41: buy milk
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #42: buy bread
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 chicken:1 cookies:0 eggplant:2 fish:1 juice:2 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 chicken:1 eggplant:2 fish:1 juice:2 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #42: buy bread
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #43: buy juice
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 chicken:1 cookies:0 eggplant:2 fish:1 juice:1 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 chicken:1 eggplant:2 fish:1 juice:1 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #43: buy juice
+First item: avocado:1
+Last item: tomato:4
+
+Warning: Unable to fulfill request: at line #44: buy pie
+Warning: Item pie is out of stock.
+
+at line #44: buy pie
+First item: avocado:1
+Last item: tomato:4
+
+
+Update at line #45: buy chicken
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 chicken:0 cookies:0 eggplant:2 fish:1 juice:1 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 eggplant:2 fish:1 juice:1 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+at line #45: buy chicken
+First item: avocado:1
+Last item: tomato:4
+
+
+
+
+Final state of inventory:
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+apples:1 avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 chicken:0 cookies:0 eggplant:2 fish:1 juice:1 linguine:1 meat:0 milk:2 onion:1 pie:0 soup:3 spaghetti:1 tomato:4
+
+Testing traversing "soft" inventory:
+avocado:1 basil:1 beans:2 bread:1 cake:1 cereal:2 eggplant:2 fish:1 juice:1 linguine:1 milk:2 soup:3 spaghetti:1 tomato:4
+
+
+Done with SuperMarket.
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+Test file: resources/inventory_short.txt
+
+NOTES: tests the removal of the root node
+-----------------------------------------------------
+Test file: resources/inventory_short.txt
+
+
+Update at line #1: add soup
+"hard" number of unique items (i.e. mSizeHard) = 1
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+soup:1
+
+Testing traversing "soft" inventory:
+soup:1
+
+
+at line #1: add soup
+First item: soup:1
+Last item: soup:1
+
+
+Update at line #2: add tangerines
+"hard" number of unique items (i.e. mSizeHard) = 2
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+soup:1 tangerines:1
+
+Testing traversing "soft" inventory:
+soup:1 tangerines:1
+
+
+at line #2: add tangerines
+First item: soup:1
+Last item: tangerines:1
+
+
+Update at line #3: add turnips
+"hard" number of unique items (i.e. mSizeHard) = 3
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+soup:1 tangerines:1 turnips:1
+
+
+at line #3: add turnips
+First item: soup:1
+Last item: turnips:1
+
+
+Update at line #4: add milk
+"hard" number of unique items (i.e. mSizeHard) = 4
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #4: add milk
+First item: milk:1
+Last item: turnips:1
+
+
+Update at line #5: add apples
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:1 milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:1 milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #5: add apples
+First item: apples:1
+Last item: turnips:1
+
+
+Update at line #6: add apples
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:2 milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:2 milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #6: add apples
+First item: apples:2
+Last item: turnips:1
+
+
+Update at line #7: add apples
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:3 milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:3 milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #7: add apples
+First item: apples:3
+Last item: turnips:1
+
+
+Update at line #8: add bread
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+apples:3 bread:1 milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:3 bread:1 milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #8: add bread
+First item: apples:3
+Last item: turnips:1
+
+
+Update at line #9: buy soup
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:3 bread:1 milk:1 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:3 bread:1 milk:1 tangerines:1 turnips:1
+
+
+at line #9: buy soup
+First item: apples:3
+Last item: turnips:1
+
+
+Update at line #10: buy milk
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+apples:3 bread:1 milk:0 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:3 bread:1 tangerines:1 turnips:1
+
+
+at line #10: buy milk
+First item: apples:3
+Last item: turnips:1
+
+
+Update at line #11: buy bread
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+apples:3 bread:0 milk:0 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:3 tangerines:1 turnips:1
+
+
+at line #11: buy bread
+First item: apples:3
+Last item: turnips:1
+
+
+Update at line #12: buy apples
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+apples:2 bread:0 milk:0 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:2 tangerines:1 turnips:1
+
+
+at line #12: buy apples
+First item: apples:2
+Last item: turnips:1
+
+
+
+
+Final state of inventory:
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+apples:2 bread:0 milk:0 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:2 tangerines:1 turnips:1
+
+
+Done with SuperMarket.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+Test file: resources/inventory_invalid_remove.txt
+
+NOTES: tests the boundary condition when removing an
+        item that may not exist
+-----------------------------------------------------
+Test file: resources/inventory_invalid_removal.txt
+
+
+Update at line #1: add soup
+"hard" number of unique items (i.e. mSizeHard) = 1
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+soup:1
+
+Testing traversing "soft" inventory:
+soup:1
+
+
+at line #1: add soup
+First item: soup:1
+Last item: soup:1
+
+
+Update at line #2: add tangerines
+"hard" number of unique items (i.e. mSizeHard) = 2
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+soup:1 tangerines:1
+
+Testing traversing "soft" inventory:
+soup:1 tangerines:1
+
+
+at line #2: add tangerines
+First item: soup:1
+Last item: tangerines:1
+
+
+Update at line #3: add turnips
+"hard" number of unique items (i.e. mSizeHard) = 3
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+soup:1 tangerines:1 turnips:1
+
+
+at line #3: add turnips
+First item: soup:1
+Last item: turnips:1
+
+
+Update at line #4: add milk
+"hard" number of unique items (i.e. mSizeHard) = 4
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #4: add milk
+First item: milk:1
+Last item: turnips:1
+
+
+Update at line #5: add apples
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:1 milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:1 milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #5: add apples
+First item: apples:1
+Last item: turnips:1
+
+
+Update at line #6: add bread
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 milk:1 soup:1 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 milk:1 soup:1 tangerines:1 turnips:1
+
+
+at line #6: add bread
+First item: apples:1
+Last item: turnips:1
+
+
+Update at line #7: buy soup
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 milk:1 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 milk:1 tangerines:1 turnips:1
+
+
+at line #7: buy soup
+First item: apples:1
+Last item: turnips:1
+
+Warning: Unable to fulfill request: at line #8: buy soup
+Warning: Item soup is out of stock.
+
+at line #8: buy soup
+First item: apples:1
+Last item: turnips:1
+
+
+
+
+Final state of inventory:
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 milk:1 soup:0 tangerines:1 turnips:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 milk:1 tangerines:1 turnips:1
+
+
+Done with SuperMarket.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+Test file: resources/inventory_custom.txt
+
+NOTES: custom test case to check multiple cases
+-----------------------------------------------------
+Test file: resources/inventory_custom.txt
+
+Warning: Unable to fulfill request: at line #1: buy bread
+Warning: Item bread is out of stock.
+
+at line #1: buy bread
+Warning: minimum element not found!
+Warning: maximum element not found!
+
+
+Update at line #2: add eggs
+"hard" number of unique items (i.e. mSizeHard) = 1
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+eggs:1
+
+Testing traversing "soft" inventory:
+eggs:1
+
+
+at line #2: add eggs
+First item: eggs:1
+Last item: eggs:1
+
+Warning: Unable to fulfill request: at line #3: buy cheese
+Warning: Item cheese is out of stock.
+
+at line #3: buy cheese
+First item: eggs:1
+Last item: eggs:1
+
+
+Update at line #4: add butter
+"hard" number of unique items (i.e. mSizeHard) = 2
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+butter:1 eggs:1
+
+Testing traversing "soft" inventory:
+butter:1 eggs:1
+
+
+at line #4: add butter
+First item: butter:1
+Last item: eggs:1
+
+Warning: Unable to fulfill request: at line #5: buy yogurt
+Warning: Item yogurt is out of stock.
+
+at line #5: buy yogurt
+First item: butter:1
+Last item: eggs:1
+
+
+Update at line #6: add honey
+"hard" number of unique items (i.e. mSizeHard) = 3
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+butter:1 eggs:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:1 eggs:1 honey:1
+
+
+at line #6: add honey
+First item: butter:1
+Last item: honey:1
+
+Warning: Unable to fulfill request: at line #7: buy chicken
+Warning: Item chicken is out of stock.
+
+at line #7: buy chicken
+First item: butter:1
+Last item: honey:1
+
+
+Update at line #8: add garlic
+"hard" number of unique items (i.e. mSizeHard) = 4
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+butter:1 eggs:1 garlic:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:1 eggs:1 garlic:1 honey:1
+
+
+at line #8: add garlic
+First item: butter:1
+Last item: honey:1
+
+Warning: Unable to fulfill request: at line #9: buy pasta
+Warning: Item pasta is out of stock.
+
+at line #9: buy pasta
+First item: butter:1
+Last item: honey:1
+
+Warning: Unable to fulfill request: at line #10: buy yogurt
+Warning: Item yogurt is out of stock.
+
+at line #10: buy yogurt
+First item: butter:1
+Last item: honey:1
+
+
+Update at line #11: add granola
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+butter:1 eggs:1 garlic:1 granola:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:1 eggs:1 garlic:1 granola:1 honey:1
+
+
+at line #11: add granola
+First item: butter:1
+Last item: honey:1
+
+Warning: Unable to fulfill request: at line #12: buy coffee
+Warning: Item coffee is out of stock.
+
+at line #12: buy coffee
+First item: butter:1
+Last item: honey:1
+
+
+Update at line #13: add creamer
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+butter:1 creamer:1 eggs:1 garlic:1 granola:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:1 creamer:1 eggs:1 garlic:1 granola:1 honey:1
+
+
+at line #13: add creamer
+First item: butter:1
+Last item: honey:1
+
+Warning: Unable to fulfill request: at line #14: buy chips
+Warning: Item chips is out of stock.
+
+at line #14: buy chips
+First item: butter:1
+Last item: honey:1
+
+
+Update at line #15: add guacamole
+"hard" number of unique items (i.e. mSizeHard) = 7
+"soft" number of unique items (i.e. mSize) = 7
+
+Testing traversing "hard" inventory:
+butter:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1
+
+
+at line #15: add guacamole
+First item: butter:1
+Last item: honey:1
+
+Warning: Unable to fulfill request: at line #16: buy milk
+Warning: Item milk is out of stock.
+
+at line #16: buy milk
+First item: butter:1
+Last item: honey:1
+
+
+Update at line #17: add chocolate_syrup
+"hard" number of unique items (i.e. mSizeHard) = 8
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+butter:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1
+
+
+at line #17: add chocolate_syrup
+First item: butter:1
+Last item: honey:1
+
+
+Update at line #18: add butter
+"hard" number of unique items (i.e. mSizeHard) = 8
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+butter:2 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1
+
+Testing traversing "soft" inventory:
+butter:2 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1
+
+
+at line #18: add butter
+First item: butter:2
+Last item: honey:1
+
+
+Update at line #19: add lettuce
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 9
+
+Testing traversing "hard" inventory:
+butter:2 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1 lettuce:1
+
+Testing traversing "soft" inventory:
+butter:2 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1 lettuce:1
+
+
+at line #19: add lettuce
+First item: butter:2
+Last item: lettuce:1
+
+
+Update at line #20: add cheese
+"hard" number of unique items (i.e. mSizeHard) = 10
+"soft" number of unique items (i.e. mSize) = 10
+
+Testing traversing "hard" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1 lettuce:1
+
+Testing traversing "soft" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:1 granola:1 guacamole:1 honey:1 lettuce:1
+
+
+at line #20: add cheese
+First item: butter:2
+Last item: lettuce:1
+
+
+Update at line #21: add garlic
+"hard" number of unique items (i.e. mSizeHard) = 10
+"soft" number of unique items (i.e. mSize) = 10
+
+Testing traversing "hard" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1
+
+Testing traversing "soft" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1
+
+
+at line #21: add garlic
+First item: butter:2
+Last item: lettuce:1
+
+
+Update at line #22: add tomato_sauce
+"hard" number of unique items (i.e. mSizeHard) = 11
+"soft" number of unique items (i.e. mSize) = 11
+
+Testing traversing "hard" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 tomato_sauce:1
+
+Testing traversing "soft" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 tomato_sauce:1
+
+
+at line #22: add tomato_sauce
+First item: butter:2
+Last item: tomato_sauce:1
+
+
+Update at line #23: add mushrooms
+"hard" number of unique items (i.e. mSizeHard) = 12
+"soft" number of unique items (i.e. mSize) = 12
+
+Testing traversing "hard" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 mushrooms:1 tomato_sauce:1
+
+Testing traversing "soft" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 mushrooms:1 tomato_sauce:1
+
+
+at line #23: add mushrooms
+First item: butter:2
+Last item: tomato_sauce:1
+
+
+Update at line #24: add salsa
+"hard" number of unique items (i.e. mSizeHard) = 13
+"soft" number of unique items (i.e. mSize) = 13
+
+Testing traversing "hard" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 mushrooms:1 salsa:1 tomato_sauce:1
+
+Testing traversing "soft" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 mushrooms:1 salsa:1 tomato_sauce:1
+
+
+at line #24: add salsa
+First item: butter:2
+Last item: tomato_sauce:1
+
+
+Update at line #25: add lime_juice
+"hard" number of unique items (i.e. mSizeHard) = 14
+"soft" number of unique items (i.e. mSize) = 14
+
+Testing traversing "hard" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:1
+
+Testing traversing "soft" inventory:
+butter:2 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:1
+
+
+at line #25: add lime_juice
+First item: butter:2
+Last item: tomato_sauce:1
+
+
+Update at line #26: add cauliflower
+"hard" number of unique items (i.e. mSizeHard) = 15
+"soft" number of unique items (i.e. mSize) = 15
+
+Testing traversing "hard" inventory:
+butter:2 cauliflower:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:1
+
+Testing traversing "soft" inventory:
+butter:2 cauliflower:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:1
+
+
+at line #26: add cauliflower
+First item: butter:2
+Last item: tomato_sauce:1
+
+
+Update at line #27: add toothpaste
+"hard" number of unique items (i.e. mSizeHard) = 16
+"soft" number of unique items (i.e. mSize) = 16
+
+Testing traversing "hard" inventory:
+butter:2 cauliflower:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 cauliflower:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:1 toothpaste:1
+
+
+at line #27: add toothpaste
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #28: add tomato_sauce
+"hard" number of unique items (i.e. mSizeHard) = 16
+"soft" number of unique items (i.e. mSize) = 16
+
+Testing traversing "hard" inventory:
+butter:2 cauliflower:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 cauliflower:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+
+at line #28: add tomato_sauce
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #29: buy bananas
+Warning: Item bananas is out of stock.
+
+at line #29: buy bananas
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #30: add cereal
+"hard" number of unique items (i.e. mSizeHard) = 17
+"soft" number of unique items (i.e. mSize) = 17
+
+Testing traversing "hard" inventory:
+butter:2 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+
+at line #30: add cereal
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #31: buy broccoli
+Warning: Item broccoli is out of stock.
+
+at line #31: buy broccoli
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #32: add carrots
+"hard" number of unique items (i.e. mSizeHard) = 18
+"soft" number of unique items (i.e. mSize) = 18
+
+Testing traversing "hard" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+
+at line #32: add carrots
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #33: buy salmon
+Warning: Item salmon is out of stock.
+
+at line #33: buy salmon
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #34: add lemons
+"hard" number of unique items (i.e. mSizeHard) = 19
+"soft" number of unique items (i.e. mSize) = 19
+
+Testing traversing "hard" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:1 tomato_sauce:2 toothpaste:1
+
+
+at line #34: add lemons
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #35: buy chips
+Warning: Item chips is out of stock.
+
+at line #35: buy chips
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #36: add salsa
+"hard" number of unique items (i.e. mSizeHard) = 19
+"soft" number of unique items (i.e. mSize) = 19
+
+Testing traversing "hard" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:1 mushrooms:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+
+at line #36: add salsa
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #37: buy soda
+Warning: Item soda is out of stock.
+
+at line #37: buy soda
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #38: add lime_juice
+"hard" number of unique items (i.e. mSizeHard) = 19
+"soft" number of unique items (i.e. mSize) = 19
+
+Testing traversing "hard" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+
+at line #38: add lime_juice
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #39: buy steak
+Warning: Item steak is out of stock.
+
+at line #39: buy steak
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #40: add mushrooms
+"hard" number of unique items (i.e. mSizeHard) = 19
+"soft" number of unique items (i.e. mSize) = 19
+
+Testing traversing "hard" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 salsa:2 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 salsa:2 tomato_sauce:2 toothpaste:1
+
+
+at line #40: add mushrooms
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #41: buy avocados
+Warning: Item avocados is out of stock.
+
+at line #41: buy avocados
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #42: add onion
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 20
+
+Testing traversing "hard" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:2 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+
+at line #42: add onion
+First item: butter:2
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #43: buy ice_cream
+Warning: Item ice_cream is out of stock.
+
+at line #43: buy ice_cream
+First item: butter:2
+Last item: toothpaste:1
+
+
+Update at line #44: add butter
+"hard" number of unique items (i.e. mSizeHard) = 20
+"soft" number of unique items (i.e. mSize) = 20
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 salsa:2 tomato_sauce:2 toothpaste:1
+
+
+at line #44: add butter
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #45: buy bread
+Warning: Item bread is out of stock.
+
+at line #45: buy bread
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #46: add tomatoes
+"hard" number of unique items (i.e. mSizeHard) = 21
+"soft" number of unique items (i.e. mSize) = 21
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #46: add tomatoes
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #47: buy chicken
+Warning: Item chicken is out of stock.
+
+at line #47: buy chicken
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #48: add potatoes
+"hard" number of unique items (i.e. mSizeHard) = 22
+"soft" number of unique items (i.e. mSize) = 22
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #48: add potatoes
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #49: buy cheese
+"hard" number of unique items (i.e. mSizeHard) = 22
+"soft" number of unique items (i.e. mSize) = 21
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:0 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:1 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #49: buy cheese
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #50: add lettuce
+"hard" number of unique items (i.e. mSizeHard) = 22
+"soft" number of unique items (i.e. mSize) = 21
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:0 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #50: add lettuce
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #51: buy milk
+Warning: Item milk is out of stock.
+
+at line #51: buy milk
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #52: add cheese
+"hard" number of unique items (i.e. mSizeHard) = 22
+"soft" number of unique items (i.e. mSize) = 21
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #52: add cheese
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #53: buy beef
+Warning: Item beef is out of stock.
+
+at line #53: buy beef
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #54: add ground_beef
+"hard" number of unique items (i.e. mSizeHard) = 23
+"soft" number of unique items (i.e. mSize) = 22
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:1 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #54: add ground_beef
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #55: buy broccoli
+Warning: Item broccoli is out of stock.
+
+at line #55: buy broccoli
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #56: add cauliflower
+"hard" number of unique items (i.e. mSizeHard) = 23
+"soft" number of unique items (i.e. mSize) = 22
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #56: add cauliflower
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #57: buy apples
+Warning: Item apples is out of stock.
+
+at line #57: buy apples
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #58: add oranges
+"hard" number of unique items (i.e. mSizeHard) = 24
+"soft" number of unique items (i.e. mSize) = 23
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #58: add oranges
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #59: buy pasta
+Warning: Item pasta is out of stock.
+
+at line #59: buy pasta
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #60: add spaghetti_sauce
+"hard" number of unique items (i.e. mSizeHard) = 25
+"soft" number of unique items (i.e. mSize) = 24
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 spaghetti_sauce:1 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 spaghetti_sauce:1 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #60: add spaghetti_sauce
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #61: buy soap
+Warning: Item soap is out of stock.
+
+at line #61: buy soap
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #62: add shampoo
+"hard" number of unique items (i.e. mSizeHard) = 26
+"soft" number of unique items (i.e. mSize) = 25
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 tomato_sauce:2 tomatoes:1 toothpaste:1
+
+
+at line #62: add shampoo
+First item: butter:3
+Last item: toothpaste:1
+
+Warning: Unable to fulfill request: at line #63: buy toothbrushes
+Warning: Item toothbrushes is out of stock.
+
+at line #63: buy toothbrushes
+First item: butter:3
+Last item: toothpaste:1
+
+
+Update at line #64: add toothpaste
+"hard" number of unique items (i.e. mSizeHard) = 26
+"soft" number of unique items (i.e. mSize) = 25
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 tomato_sauce:2 tomatoes:1 toothpaste:2
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 tomato_sauce:2 tomatoes:1 toothpaste:2
+
+
+at line #64: add toothpaste
+First item: butter:3
+Last item: toothpaste:2
+
+Warning: Unable to fulfill request: at line #65: buy water
+Warning: Item water is out of stock.
+
+at line #65: buy water
+First item: butter:3
+Last item: toothpaste:2
+
+
+Update at line #66: add sparkling_water
+"hard" number of unique items (i.e. mSizeHard) = 27
+"soft" number of unique items (i.e. mSize) = 26
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 sparkling_water:1 tomato_sauce:2 tomatoes:1 toothpaste:2
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 sparkling_water:1 tomato_sauce:2 tomatoes:1 toothpaste:2
+
+
+at line #66: add sparkling_water
+First item: butter:3
+Last item: toothpaste:2
+
+
+
+
+Final state of inventory:
+"hard" number of unique items (i.e. mSizeHard) = 27
+"soft" number of unique items (i.e. mSize) = 26
+
+Testing traversing "hard" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 cheese:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 sparkling_water:1 tomato_sauce:2 tomatoes:1 toothpaste:2
+
+Testing traversing "soft" inventory:
+butter:3 carrots:1 cauliflower:2 cereal:1 chocolate_syrup:1 creamer:1 eggs:1 garlic:2 granola:1 ground_beef:1 guacamole:1 honey:1 lemons:1 lettuce:2 lime_juice:2 mushrooms:2 onion:1 oranges:1 potatoes:1 salsa:2 shampoo:1 spaghetti_sauce:1 sparkling_water:1 tomato_sauce:2 tomatoes:1 toothpaste:2
+
+
+Done with SuperMarket.
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+Test file: resources/bob_test.txt
+
+NOTES: Bob's test case to make sure that findMin and findMax work
+-----------------------------------------------------
+Test file: resources/bob_test.txt
+
+
+Update at line #1: add milk
+"hard" number of unique items (i.e. mSizeHard) = 1
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+milk:1
+
+Testing traversing "soft" inventory:
+milk:1
+
+
+at line #1: add milk
+First item: milk:1
+Last item: milk:1
+
+
+Update at line #2: add apples
+"hard" number of unique items (i.e. mSizeHard) = 2
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+apples:1 milk:1
+
+Testing traversing "soft" inventory:
+apples:1 milk:1
+
+
+at line #2: add apples
+First item: apples:1
+Last item: milk:1
+
+
+Update at line #3: add zucchini
+"hard" number of unique items (i.e. mSizeHard) = 3
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+apples:1 milk:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 milk:1 zucchini:1
+
+
+at line #3: add zucchini
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #4: add cookies
+"hard" number of unique items (i.e. mSizeHard) = 4
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+apples:1 cookies:1 milk:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 cookies:1 milk:1 zucchini:1
+
+
+at line #4: add cookies
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #5: add bread
+"hard" number of unique items (i.e. mSizeHard) = 5
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 cookies:1 milk:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 cookies:1 milk:1 zucchini:1
+
+
+at line #5: add bread
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #6: add eggplant
+"hard" number of unique items (i.e. mSizeHard) = 6
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 zucchini:1
+
+
+at line #6: add eggplant
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #7: add pasta
+"hard" number of unique items (i.e. mSizeHard) = 7
+"soft" number of unique items (i.e. mSize) = 7
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 pasta:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 pasta:1 zucchini:1
+
+
+at line #7: add pasta
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #8: add onion
+"hard" number of unique items (i.e. mSizeHard) = 8
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 zucchini:1
+
+
+at line #8: add onion
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #9: add turnips
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 9
+
+Testing traversing "hard" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:1
+
+Testing traversing "soft" inventory:
+apples:1 bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:1
+
+
+at line #9: add turnips
+First item: apples:1
+Last item: zucchini:1
+
+
+Update at line #10: buy apples
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 8
+
+Testing traversing "hard" inventory:
+apples:0 bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:1
+
+Testing traversing "soft" inventory:
+bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:1
+
+
+at line #10: buy apples
+First item: bread:1
+Last item: zucchini:1
+
+
+Update at line #11: buy zucchini
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 7
+
+Testing traversing "hard" inventory:
+apples:0 bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:0
+
+Testing traversing "soft" inventory:
+bread:1 cookies:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1
+
+
+at line #11: buy zucchini
+First item: bread:1
+Last item: turnips:1
+
+
+Update at line #12: buy cookies
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 6
+
+Testing traversing "hard" inventory:
+apples:0 bread:1 cookies:0 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:0
+
+Testing traversing "soft" inventory:
+bread:1 eggplant:1 milk:1 onion:1 pasta:1 turnips:1
+
+
+at line #12: buy cookies
+First item: bread:1
+Last item: turnips:1
+
+
+Update at line #13: buy bread
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 5
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:1 milk:1 onion:1 pasta:1 turnips:1 zucchini:0
+
+Testing traversing "soft" inventory:
+eggplant:1 milk:1 onion:1 pasta:1 turnips:1
+
+
+at line #13: buy bread
+Warning: minimum element not found!
+Last item: turnips:1
+
+
+Update at line #14: buy pasta
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 4
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:1 milk:1 onion:1 pasta:0 turnips:1 zucchini:0
+
+Testing traversing "soft" inventory:
+eggplant:1 milk:1 onion:1 turnips:1
+
+
+at line #14: buy pasta
+Warning: minimum element not found!
+Last item: turnips:1
+
+
+Update at line #15: buy turnips
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 3
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:1 milk:1 onion:1 pasta:0 turnips:0 zucchini:0
+
+Testing traversing "soft" inventory:
+eggplant:1 milk:1 onion:1
+
+
+at line #15: buy turnips
+Warning: minimum element not found!
+Warning: maximum element not found!
+
+
+Update at line #16: buy onion
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 2
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:1 milk:1 onion:0 pasta:0 turnips:0 zucchini:0
+
+Testing traversing "soft" inventory:
+eggplant:1 milk:1
+
+
+at line #16: buy onion
+Warning: minimum element not found!
+Warning: maximum element not found!
+
+
+Update at line #17: buy milk
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 1
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:1 milk:0 onion:0 pasta:0 turnips:0 zucchini:0
+
+Testing traversing "soft" inventory:
+eggplant:1
+
+
+at line #17: buy milk
+Warning: minimum element not found!
+Warning: maximum element not found!
+
+
+Update at line #18: buy eggplant
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 0
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:0 milk:0 onion:0 pasta:0 turnips:0 zucchini:0
+
+Testing traversing "soft" inventory:
+
+
+
+at line #18: buy eggplant
+Warning: minimum element not found!
+Warning: maximum element not found!
+
+
+
+
+Final state of inventory:
+"hard" number of unique items (i.e. mSizeHard) = 9
+"soft" number of unique items (i.e. mSize) = 0
+
+Testing traversing "hard" inventory:
+apples:0 bread:0 cookies:0 eggplant:0 milk:0 onion:0 pasta:0 turnips:0 zucchini:0
+
+Testing traversing "soft" inventory:
+
+
+
+Done with SuperMarket.

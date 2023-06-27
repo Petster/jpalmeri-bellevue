@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Programming Assignment 7 Live View</title>
+    <style>
+        .table-row-custom {
+            background: white;
+        }
+        .table-row-custom:nth-child(2n) {
+            background: lightgrey;
+        }
+    </style>
+</head>
+<body class="min-h-screen w-full md:w-3/4 mx-auto flex flex-col bg-blue-100">
+    <div class="flex p-4 content-center items-center justify-center gap-4">
+        <a class="border-b-black border-transparent border-b-2 font-bold" href="index.html">Home</a>
+        <a class="hover:border-b-black border-transparent border-b-2 font-bold" href="results.html">Results</a>
+    </div>
+    <div class="p-2 bg-orange-300 rounded-md flex flex-col flex-grow content-center items-center justify-center">
+        <p class="text-center leading-10">To view the charts live and be able to zoom in, select the "final_results.xlsx" from the resources folder and click <span class="bg-green-500 p-2 font-bold hover:bg-green-600 hover:text-zinc-800">Analyze</span></p>
+    </div>
+    <div id="outerDiv" class="flex flex-col flex-grow content-center items-center justify-center">
+        <div id="importModal" class="flex flex-col text-center space-y-2 rounded-xl w-full">
+            <h1 id="importErrorText" class="text-red-400 font-bold text-xl"></h1>
+            <input id="fileIn" class="bg-blue-300 p-2 filepond" type="file" />
+            <button id="analyzeButton" type="button" class="bg-green-500 p-2 font-bold hover:bg-green-600 hover:text-zinc-800">Analyze</button>
+        </div>
+        <div class="flex flex-col w-full pt-2" id="tableGoesHere">
+
+        </div>
+        <div id="container" class="flex flex-col w-full h-full pt-2" style="height:600px">
+
+        </div>
+        <div id="containerTens" class="flex flex-col w-full h-full pt-2" style="height:600px">
+
+        </div>
+        <div id="containerHundreds" class="flex flex-col w-full h-full pt-2" style="height:600px">
+
+        </div>
+        <div id="containerMillions" class="flex flex-col w-full h-full pt-2" style="height:600px">
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script>
+        const outer = document.getElementById('outerDiv');
+        const table = document.getElementById('tableGoesHere');
+
+        document.getElementById('analyzeButton').addEventListener('click', async() => {
+            document.getElementById('tableGoesHere').innerHTML = "";
+            let data;
+            try {
+                // Parse XLSX File
+                try {
+                    let fileIn = document.getElementById('fileIn').files[0];
+                    const buffer = await fileIn.arrayBuffer();
+                    let wb = XLSX.read(buffer);
+                    let sheet = wb.Sheets['Results'];
+                    data = XLSX.utils.sheet_to_json(sheet);
+                } catch (e) {
+                    document.getElementById('importErrorText').innerHTML = "Error Reading File, ensure it is a .xlsx";
+                    throw new Error("Could Not Read XLSX File")
+                }
+
+                document.getElementById('importErrorText').innerHTML = "";
+
+                // Create Table "Raw Results"
+                try {
+                    table.innerHTML = json2table(data, '');
+                } catch (e) {
+                    document.getElementById('importErrorText').innerHTML = "Could not create table, is the file an .xlsx or blank?";
+                    throw new Error("Could Not Create Table")
+                }
+
+                // Toggle for Table
+                document.getElementById('rawResults').addEventListener('click', () => {
+                    const tab = document.getElementById('theTable');
+                    tab.style.display === 'none' ? tab.style.display = '' : tab.style.display = 'none';
+                })
+
+                try {
+                    const newArray = createNewArray(data);
+
+                    let subset1 = [];
+                    let subset2 = [];
+                    let subset3 = [];
+                    for(let i = 0; i < newArray.length; i++) {
+                        if(i <= 7) {
+                            subset1.push(newArray[i]);
+                        }
+                        if(i >= 8 && i <= 16) {
+                            subset2.push(newArray[i]);
+                        }
+                        if(i >= 17) {
+                            subset3.push(newArray[i])
+                        }
+                    }
+
+                    let chart = Highcharts.chart('container', {
+                        height: '100%',
+                        chart: {
+                            type: 'line',
+                            zoomType: 'xy',
+                        },
+                        title: {
+                            text: 'Recursion Limit - All',
+                            align: 'left'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Average Time (Milliseconds)'
+                            },
+                            tickInterval: 2,
+                            maxPadding: 0.1
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Increments'
+                            }
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2,
+                                pointInterval: 2
+                            }
+                        },
+                        series: newArray,
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'center',
+                                        verticalAlign: 'bottom'
+                                    }
+                                }
+                            }]
+                        }
+                    });
+                    chart.reflow();
+                    let chartTens = Highcharts.chart('containerTens', {
+                        height: '100%',
+                        chart: {
+                            type: 'line',
+                            zoomType: 'xy',
+                        },
+                        title: {
+                            text: 'Recursion Limit - Ten Thousands',
+                            align: 'left'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Average Time (Milliseconds)'
+                            },
+                            tickInterval: 2,
+                            maxPadding: 0.1
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Increments'
+                            }
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2,
+                                pointInterval: 2
+                            }
+                        },
+                        series: subset1,
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'center',
+                                        verticalAlign: 'bottom'
+                                    }
+                                }
+                            }]
+                        }
+                    });
+                    chartTens.reflow();
+                    let chartHundreds = Highcharts.chart('containerHundreds', {
+                        height: '100%',
+                        chart: {
+                            type: 'line',
+                            zoomType: 'xy',
+                        },
+                        title: {
+                            text: 'Recursion Limit - Hundred Thousands',
+                            align: 'left'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Average Time (Milliseconds)'
+                            },
+                            tickInterval: 2,
+                            maxPadding: 0.1
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Increments'
+                            }
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2,
+                                pointInterval: 2
+                            }
+                        },
+                        series: subset2,
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'center',
+                                        verticalAlign: 'bottom'
+                                    }
+                                }
+                            }]
+                        }
+                    });
+                    chartHundreds.reflow();
+                    let chartMillions = Highcharts.chart('containerMillions', {
+                        height: '100%',
+                        chart: {
+                            type: 'line',
+                            zoomType: 'xy',
+                        },
+                        title: {
+                            text: 'Recursion Limit - Millions',
+                            align: 'left'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Average Time (Milliseconds)'
+                            },
+                            tickInterval: 2,
+                            maxPadding: 0.1
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Increments'
+                            }
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2,
+                                pointInterval: 2
+                            }
+                        },
+                        series: subset3,
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'center',
+                                        verticalAlign: 'bottom'
+                                    }
+                                }
+                            }]
+                        }
+                    });
+                    chartMillions.reflow();
+                } catch (e) {
+                    throw new Error("Could Not Create HighChart Charts")
+                }
+            } catch (e) {
+                console.error(e)
+            }
+        });
+        function json2table(json, classes) {
+            let cols = Object.keys(json[0]);
+
+            let headerRow = '';
+            let bodyRows = '';
+
+            classes = classes || '';
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+            cols.map(function(col) {
+                headerRow += '<th>' + capitalizeFirstLetter(col) + '</th>';
+            });
+
+            json.map(function(row) {
+                bodyRows += '<tr class="flex flex-row justify-between table-row-custom">';
+
+                cols.map(function(colName) {
+                    bodyRows += '<td class="">' + row[colName] + '</td>';
+                })
+
+                bodyRows += '</tr>';
+            });
+
+            return `
+                    <div id="rawResults" class="flex flex-row p-2 flex-grow bg-blue-300 content-center items-cetner justify-between">
+                        <div class="flex flex-grow"></div>
+                            <p class="text-xl font-bold">Raw Results</p>
+                            <div class="flex flex-grow justify-end content-center items-center">
+                            <svg width="15" height="10" viewBox="-2.5 -5 75 60" preserveAspectRatio="none"> <path d="M0,0 l35,50 l35,-50" fill="none" stroke="black" stroke-linecap="round" stroke-width="5"></path> </svg>
+                        </div>
+                    </div>
+                    <table id="theTable" style="display: none;" class="` + classes + '"><thead><tr  class="flex flex-row justify-between">' + headerRow + '</tr></thead><tbody>' + bodyRows + `</tbody></table>
+            `;
+        }
+        function createNewArray(x) {
+            const newArray = [];
+            for (const item of x) {
+                const arraySize = item['Array Size'];
+                if (!newArray.find(obj => obj.name === arraySize)) {
+                    newArray.push({
+                        name: arraySize,
+                        data: []
+                    });
+                }
+                newArray[newArray.findIndex(obj => obj.name === arraySize)].data.push(Math.ceil(item['Average Time'] / 1000000));
+            }
+            return newArray;
+        }
+    </script>
+</body>
+</html>

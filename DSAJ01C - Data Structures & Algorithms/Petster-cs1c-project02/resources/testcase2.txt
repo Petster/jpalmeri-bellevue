@@ -1,0 +1,8 @@
+oranges,-2.50
+baguette,3.75
+cheddar cheese,12.00
+potato chips,-1.00
+organic eggs,5.50
+kiwis,0.50
+chocolate ice cream,20.00
+pepperoni pizza,-8.25
